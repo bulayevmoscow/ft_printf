@@ -98,6 +98,9 @@ int check_precision(const char *str, t_info *info)
 		precision = ft_atoi(str + len);
 		while (ft_isdigit(*(str + len)))
 			len++;
+	} else {
+	    info->precision = -1;
+        return 0;
 	}
 	if (precision != 0)
 		info->precision = precision;

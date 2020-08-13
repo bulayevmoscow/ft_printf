@@ -55,8 +55,10 @@ int pusher_string(t_info *info, va_list arg_list)
 
 	if (info->precision_mod == 1)
 		str = ft_strnew(0);
-	if (info->precision_mod == 0)
+	if (info->precision_mod == 0 && info->precision != -1)
 		str = ft_strsub(va_arg(arg_list, char *), 0, info->precision);
+    if (info->precision_mod == 0 && info->precision == -1)
+        str = ft_strdup(va_arg(arg_list, char *));
 
 	if (info->width)
 		str = pusher_string_width(info, str);
