@@ -8,6 +8,7 @@
 #include "../libft/libft.h"
 
 #ifndef TEST1_HEADER_H
+#define TEST1_HEADER_H
 
 typedef struct Model
 {
@@ -70,7 +71,7 @@ int print_result();
 void debugStruct();
 void removeStruct();
 
-#define TEST1_HEADER_H
+
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
