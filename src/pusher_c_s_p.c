@@ -8,6 +8,8 @@ int pusher_manager(t_info *info, va_list arg_list)
 		pusher_percent(info, arg_list);
 	if (info->specifier == 's')
 		pusher_string(info, arg_list);
+	if (info->specifier == 'd' || info->specifier == 'i')
+	    pusher_d_i(info, arg_list);
 
 	return 0;
 }
@@ -88,7 +90,7 @@ char *pusher_string_width(t_info *info, char *str)
 	if (ft_strlen(str) > info->width)
 		return str;
 	len = info->width;
-	str1 = ft_strmaker(1, len);
+	str1 = ft_strmaker((info->flag_zero) , len);
 	if (!str1)
 		return NULL;
 	while (str[++i] && info->flag_minus)
@@ -113,7 +115,7 @@ char *ft_strmaker(int space, int size)
 		return NULL;
 
 	while (i != size) {
-		str[i] = (space) ? ' ' : '0';
+		str[i] = (space) ? '0' : ' ';
 		i++;
 	}
 	str[i] = '\0';

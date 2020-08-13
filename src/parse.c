@@ -154,13 +154,14 @@ void removeStruct()
 	free(model);
 	while (model1->value) {
 //		printf("\nRemove str [%s] [value = %d]", model1->str, model1->value);
-		free(model1->str);
+//		free(model1->str);
 		buffer = model1->next;
 		free(model1);
 		model1 = buffer;
 		if (buffer->next == NULL) {
 //			printf("\nRemove str [%s] [value = %d]", model1->str, model1->value);
-			free(model1->str);
+//			free(model1->str);
+
 			buffer = model1->next;
 			free(model1);
 			model1 = buffer;

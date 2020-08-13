@@ -198,6 +198,10 @@ CMakeFiles/ft_printf_new.dir/src/check_flags.c.o: ../header/header.h
 CMakeFiles/ft_printf_new.dir/src/check_flags.c.o: ../libft/libft.h
 CMakeFiles/ft_printf_new.dir/src/check_flags.c.o: ../src/check_flags.c
 
+CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.o: ../header/header.h
+CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.o: ../libft/libft.h
+CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.o: ../src/ft_itoa_external.c
+
 CMakeFiles/ft_printf_new.dir/src/isnum.c.o: ../header/header.h
 CMakeFiles/ft_printf_new.dir/src/isnum.c.o: ../libft/libft.h
 CMakeFiles/ft_printf_new.dir/src/isnum.c.o: ../src/isnum.c
@@ -213,4 +217,8 @@ CMakeFiles/ft_printf_new.dir/src/printf.c.o: ../src/printf.c
 CMakeFiles/ft_printf_new.dir/src/pusher_c_s_p.c.o: ../header/header.h
 CMakeFiles/ft_printf_new.dir/src/pusher_c_s_p.c.o: ../libft/libft.h
 CMakeFiles/ft_printf_new.dir/src/pusher_c_s_p.c.o: ../src/pusher_c_s_p.c
+
+CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.o: ../header/header.h
+CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.o: ../libft/libft.h
+CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.o: ../src/pusher_diuoxX.c
 

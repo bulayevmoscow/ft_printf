@@ -64,10 +64,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf_new.dir/libft/ft_toupper.c.o"
   "CMakeFiles/ft_printf_new.dir/main.c.o"
   "CMakeFiles/ft_printf_new.dir/src/check_flags.c.o"
+  "CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.o"
   "CMakeFiles/ft_printf_new.dir/src/isnum.c.o"
   "CMakeFiles/ft_printf_new.dir/src/parse.c.o"
   "CMakeFiles/ft_printf_new.dir/src/printf.c.o"
   "CMakeFiles/ft_printf_new.dir/src/pusher_c_s_p.c.o"
+  "CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.o"
   "ft_printf_new"
   "ft_printf_new.pdb"
 )

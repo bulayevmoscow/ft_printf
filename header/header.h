@@ -65,7 +65,16 @@ int pusher_percent(t_info *info, va_list arg_list);
 int pusher_c(t_info *info, va_list arg_list);
 int pusher_string(t_info *info, va_list arg_list);
 char *pusher_string_width(t_info *info, char *str);
+int pusher_d_i(t_info *info, va_list arg_list);
+int pusher_d_i_2(t_info *info, char *str);
+int pusher_d_i_2_flags(t_info *info, char *str);
+//String Width Maker
 char *ft_strmaker(int space, int size);
+//Add to lib
+static int		ft_itoa_external_len(long long int n);
+char			*ft_itoa_external(long long int n);
+
+
 int print_result();
 void debugStruct();
 void removeStruct();

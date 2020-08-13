@@ -6,5 +6,5 @@ C_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/kupsyloc/Desktop/ft_printf_new/header -I/Users/kupsyloc/Desktop/ft_printf_new/libft 
+C_INCLUDES = -I/Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944/header -I/Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944/libft 
 

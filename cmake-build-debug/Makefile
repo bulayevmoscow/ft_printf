@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kupsyloc/Desktop/ft_printf_new
+CMAKE_SOURCE_DIR = /Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kupsyloc/Desktop/ft_printf_new/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kupsyloc/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles /Users/kupsyloc/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944/cmake-build-debug/CMakeFiles /Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kupsyloc/Desktop/ft_printf_new/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kupsyloc/Desktop/intra-uuid-9697844c-f0d9-4d37-9877-2afbb1fbd0b4-3251944/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -1878,6 +1878,33 @@ src/check_flags.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/check_flags.c.s
 .PHONY : src/check_flags.c.s
 
+src/ft_itoa_external.o: src/ft_itoa_external.c.o
+
+.PHONY : src/ft_itoa_external.o
+
+# target to build an object file
+src/ft_itoa_external.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.o
+.PHONY : src/ft_itoa_external.c.o
+
+src/ft_itoa_external.i: src/ft_itoa_external.c.i
+
+.PHONY : src/ft_itoa_external.i
+
+# target to preprocess a source file
+src/ft_itoa_external.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.i
+.PHONY : src/ft_itoa_external.c.i
+
+src/ft_itoa_external.s: src/ft_itoa_external.c.s
+
+.PHONY : src/ft_itoa_external.s
+
+# target to generate assembly for a file
+src/ft_itoa_external.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/ft_itoa_external.c.s
+.PHONY : src/ft_itoa_external.c.s
+
 src/isnum.o: src/isnum.c.o
 
 .PHONY : src/isnum.o
@@ -1985,6 +2012,33 @@ src/pusher_c_s_p.s: src/pusher_c_s_p.c.s
 src/pusher_c_s_p.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/pusher_c_s_p.c.s
 .PHONY : src/pusher_c_s_p.c.s
+
+src/pusher_diuoxX.o: src/pusher_diuoxX.c.o
+
+.PHONY : src/pusher_diuoxX.o
+
+# target to build an object file
+src/pusher_diuoxX.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.o
+.PHONY : src/pusher_diuoxX.c.o
+
+src/pusher_diuoxX.i: src/pusher_diuoxX.c.i
+
+.PHONY : src/pusher_diuoxX.i
+
+# target to preprocess a source file
+src/pusher_diuoxX.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.i
+.PHONY : src/pusher_diuoxX.c.i
+
+src/pusher_diuoxX.s: src/pusher_diuoxX.c.s
+
+.PHONY : src/pusher_diuoxX.s
+
+# target to generate assembly for a file
+src/pusher_diuoxX.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf_new.dir/build.make CMakeFiles/ft_printf_new.dir/src/pusher_diuoxX.c.s
+.PHONY : src/pusher_diuoxX.c.s
 
 # Help Target
 help:
@@ -2190,6 +2244,9 @@ help:
 	@echo "... src/check_flags.o"
 	@echo "... src/check_flags.i"
 	@echo "... src/check_flags.s"
+	@echo "... src/ft_itoa_external.o"
+	@echo "... src/ft_itoa_external.i"
+	@echo "... src/ft_itoa_external.s"
 	@echo "... src/isnum.o"
 	@echo "... src/isnum.i"
 	@echo "... src/isnum.s"
@@ -2202,6 +2259,9 @@ help:
 	@echo "... src/pusher_c_s_p.o"
 	@echo "... src/pusher_c_s_p.i"
 	@echo "... src/pusher_c_s_p.s"
+	@echo "... src/pusher_diuoxX.o"
+	@echo "... src/pusher_diuoxX.i"
+	@echo "... src/pusher_diuoxX.s"
 .PHONY : help
 
 

@@ -77,4 +77,6 @@ add_executable(ft_printf_new
         src/parse.c
         src/printf.c
         src/pusher_c_s_p.c
+        src/pusher_diuoxX.c
+        src/ft_itoa_external.c
         main.c)
