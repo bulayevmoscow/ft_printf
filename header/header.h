@@ -10,20 +10,20 @@
 #ifndef TEST1_HEADER_H
 #define TEST1_HEADER_H
 
-typedef struct Model
+typedef struct s_model
 {
 	char *str;
 	int value;
-	struct Model *next;
-} Model;
+	struct s_model *next;
+} t_model;
 
 typedef struct s_info
 {
-	char flag_space;
-	char flag_minus;
-	char flag_plus;
-	char flag_oct;
-	char flag_zero;
+	int flag_space;
+	int flag_minus;
+	int flag_plus;
+	int flag_oct;
+	int flag_zero;
 
 	int width;
 	int width_mod;
@@ -36,7 +36,7 @@ typedef struct s_info
 //info init
 t_info info_init();
 
-Model *model;
+t_model *model;
 int debug;
 
 int ft_printf(const char *input, ...);
@@ -48,7 +48,7 @@ int parseSec(const char *str, va_list arg_list);
 
 int parsePros(char *str, va_list arg_list);
 
-Model *pushModel(const char *str, Model *model, int isNew);
+t_model *pushModel(const char *str, t_model *model, int isNew);
 
 //parse_percent
 int parse_percent(const char *str);
@@ -68,7 +68,7 @@ int pusher_string(t_info *info, va_list arg_list);
 char *pusher_string_width(t_info *info, char *str);
 int pusher_d_i(t_info *info, va_list arg_list);
 int pusher_d_i_2(t_info *info, char *str);
-int pusher_d_i_2_flags(t_info *info, char *str);
+char *pusher_d_i_2_precision(t_info *info, char *str);
 //String Width Maker
 char *ft_strmaker(int space, int size);
 //Add to lib

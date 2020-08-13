@@ -9,7 +9,7 @@ int pusher_manager(t_info *info, va_list arg_list)
 	if (info->specifier == 's')
 		pusher_string(info, arg_list);
 	if (info->specifier == 'd' || info->specifier == 'i')
-	    pusher_d_i(info, arg_list);
+		pusher_d_i(info, arg_list);
 
 	return 0;
 }
@@ -59,8 +59,8 @@ int pusher_string(t_info *info, va_list arg_list)
 		str = ft_strnew(0);
 	if (info->precision_mod == 0 && info->precision != -1)
 		str = ft_strsub(va_arg(arg_list, char *), 0, info->precision);
-    if (info->precision_mod == 0 && info->precision == -1)
-        str = ft_strdup(va_arg(arg_list, char *));
+	if (info->precision_mod == 0 && info->precision == -1)
+		str = ft_strdup(va_arg(arg_list, char *));
 
 	if (info->width)
 		str = pusher_string_width(info, str);
@@ -90,15 +90,14 @@ char *pusher_string_width(t_info *info, char *str)
 	if (ft_strlen(str) > info->width)
 		return str;
 	len = info->width;
-	str1 = ft_strmaker((info->flag_zero) , len);
+	str1 = ft_strmaker((info->flag_zero), len);
 	if (!str1)
 		return NULL;
 	while (str[++i] && info->flag_minus)
 		str1[i] = str[i];
 	i--;
 	while (str[++i] && !info->flag_minus)
-		str1[len - ft_strlen(str)+i] = str[i];
-	printf("\nTEST%d", i);
+		str1[len - ft_strlen(str) + i] = str[i];
 	free(str);
 	printf("\nLen = %d, str %s", len, str1);
 	return (str1);
@@ -118,7 +117,7 @@ char *ft_strmaker(int space, int size)
 		str[i] = (space) ? '0' : ' ';
 		i++;
 	}
-	str[i] = '\0';
+	str[size + 1] = '\0';
 	return str;
 
 }

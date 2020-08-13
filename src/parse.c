@@ -25,7 +25,7 @@ int parseMain(const char *str, va_list arg_list)
 int print_result(){
 	int len;
 	int i;
-	Model *model1 = model;
+	t_model *model1 = model;
 	model1 = model1->next;
 
 	len = 0;
@@ -94,13 +94,13 @@ int parsePros(char *str, va_list arg_list)
 }
 
 
-Model *pushModel(const char *str, Model *model, int isNew)
+t_model *pushModel(const char *str, t_model *model, int isNew)
 {
 	if (debug)
 		printf("\n[pushModel] get str = \"%s\"", str);
-	Model *model1;
+	t_model *model1;
 
-	model1 = (Model *) malloc(sizeof(Model));
+	model1 = (t_model *) malloc(sizeof(t_model));
 	model1->value = isNew;
 	model1->str = (char *) str;
 	model1->next = NULL;
@@ -108,8 +108,8 @@ Model *pushModel(const char *str, Model *model, int isNew)
 		return model1;
 	}
 	while (model->next != NULL)
-		model = (Model *) model->next;
-	model->next = (Model *) model1;
+		model = (t_model *) model->next;
+	model->next = (t_model *) model1;
 	return model1;
 
 
@@ -118,7 +118,7 @@ Model *pushModel(const char *str, Model *model, int isNew)
 void debugStruct()
 {
 	int i = 0;
-	Model *model1;
+	t_model *model1;
 	model1 = model;
 	while (model1) {
 		printf(ANSI_COLOR_RED  "\nModel[%d] Value is %d String is\"%s\"" ANSI_COLOR_RESET,
@@ -138,7 +138,7 @@ void debugStruct()
 		printf("%s", model1->str);
 		if (model1->next == NULL)
 			break;
-		model1 = model1->next;
+		model1 = (t_model *) model1->next;
 	}
 
 	printf("\n");
@@ -148,19 +148,19 @@ void debugStruct()
 
 void removeStruct()
 {
-	Model *model1 = model;
-	Model *buffer;
+	t_model *model1 = model;
+	t_model *buffer;
 	model1 = model1->next;
 	free(model);
 	while (model1->value) {
 //		printf("\nRemove str [%s] [value = %d]", model1->str, model1->value);
-//		free(model1->str);
+		free(model1->str);
 		buffer = model1->next;
 		free(model1);
 		model1 = buffer;
 		if (buffer->next == NULL) {
 //			printf("\nRemove str [%s] [value = %d]", model1->str, model1->value);
-//			free(model1->str);
+			free(model1->str);
 
 			buffer = model1->next;
 			free(model1);
