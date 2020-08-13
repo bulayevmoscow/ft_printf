@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kupsyloc/Desktop/ft_printf_new/header/header.h
+stdio.h
+-
+stdarg.h
+-
+stdlib.h
+-
+../libft/libft.h
+/Users/kupsyloc/Desktop/ft_printf_new/libft/libft.h
+
+/Users/kupsyloc/Desktop/ft_printf_new/libft/libft.h
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+
+/Users/kupsyloc/Desktop/ft_printf_new/main.c
+header/header.h
+/Users/kupsyloc/Desktop/ft_printf_new/header/header.h
+

@@ -1,0 +1,1 @@
+gcc -Wall -W -Werror  *.c src/*.c libft/*.h libft/*.c
