@@ -10,8 +10,10 @@ int pusher_manager(t_info *info, va_list arg_list)
 		pusher_string(info, arg_list);
 	if (info->specifier == 'd' || info->specifier == 'i')
 		pusher_d_i(info, arg_list);
-	if (info->specifier)
+	if (info->specifier == 'u')
 		pusher_u(info, arg_list);
+	if (info->specifier == 'f')
+		pusher_f(info, arg_list);
 
 	return 0;
 }

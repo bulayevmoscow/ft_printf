@@ -99,5 +99,5 @@ int pusher_u(t_info *info, va_list arg_list)
 	str = ft_itoa_external_unsgn(nbr);
 
 	printf("\n[pusher_u]Get number = %lld\nString is %s", nbr, str);
-	pusher_d_i_2(info, str);
+	return pusher_d_i_2(info, str);
 }
