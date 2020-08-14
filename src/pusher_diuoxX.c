@@ -80,5 +80,24 @@ char *pusher_d_i_2_precision(t_info *info, char *str)
 }
 int pusher_u(t_info *info, va_list arg_list)
 {
+	char *str;
+	unsigned long long int nbr;
 
+	stars_manager(info, arg_list);
+	if (info->length == 0)
+		nbr = va_arg(arg_list,unsigned int);
+	if (info->length == pf_hh)
+		nbr = (unsigned char) va_arg(arg_list,unsigned int);
+	if (info->length == pf_h)
+		nbr = (unsigned short int) va_arg(arg_list,unsigned int);
+	if (info->length == pf_l)
+		nbr = va_arg(arg_list, unsigned long int);
+	if (info->length == pf_ll)
+		nbr = va_arg(arg_list, unsigned long long int);
+	info->flag_space = 0;
+	info->flag_plus = 0;
+	str = ft_itoa_external_unsgn(nbr);
+
+	printf("\n[pusher_u]Get number = %lld\nString is %s", nbr, str);
+	pusher_d_i_2(info, str);
 }

@@ -77,6 +77,8 @@ char *ft_strmaker(int space, int size);
 //Add to lib
 static int		ft_itoa_external_len(long long int n);
 char			*ft_itoa_external(long long int n);
+static int		ft_itoa_external_unsgn_len(unsigned long long int n);
+char			*ft_itoa_external_unsgn(unsigned long long int n);
 
 
 int print_result();

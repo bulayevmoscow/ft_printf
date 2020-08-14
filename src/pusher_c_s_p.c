@@ -10,6 +10,8 @@ int pusher_manager(t_info *info, va_list arg_list)
 		pusher_string(info, arg_list);
 	if (info->specifier == 'd' || info->specifier == 'i')
 		pusher_d_i(info, arg_list);
+	if (info->specifier)
+		pusher_u(info, arg_list);
 
 	return 0;
 }
@@ -19,7 +21,8 @@ int pusher_c(t_info *info, va_list arg_list)
 	char *str;
 
 	str = ft_strnew(2);
-	if (str == NULL) {
+	if (str == NULL)
+	{
 		return (-1);
 	}
 	*str = va_arg(arg_list, int);
@@ -32,7 +35,8 @@ int pusher_percent(t_info *info, va_list arg_list)
 	char *str;
 
 	str = ft_strnew(2);
-	if (str == NULL) {
+	if (str == NULL)
+	{
 		return (-1);
 	}
 	*str = '%';
@@ -44,34 +48,22 @@ int pusher_string(t_info *info, va_list arg_list)
 {
 	char *str;
 
-	if (info->width_mod == 2) {
-		info->width = va_arg(arg_list, int);
-		info->width_mod = 0;
-		printf("\ninfo->width_mod == 2");
-	}
-	if (info->precision_mod == 2) {
-		info->precision = va_arg(arg_list, int);
-		info->precision_mod = 0;
-		printf("\tinfo->precision_mod == 2");
-	}
-
+	stars_manager(info, arg_list);
 	if (info->precision_mod == 1)
 		str = ft_strnew(0);
 	if (info->precision_mod == 0 && info->precision != -1)
 		str = ft_strsub(va_arg(arg_list, char *), 0, info->precision);
 	if (info->precision_mod == 0 && info->precision == -1)
 		str = ft_strdup(va_arg(arg_list, char *));
-
 	if (info->width)
 		str = pusher_string_width(info, str);
-
-
 	printf("\n[pusher_string]precision = %s", str);
 
 	pushModel(str, model, 125);
 
 
-	printf("\n\n[s_info][ ] = %d;[-] = %d;[+] = %d;[#] = %d;[0] = %d;", info->flag_space,
+	printf("\n\n[s_info][ ] = %d;[-] = %d;[+] = %d;[#] = %d;[0] = %d;",
+		   info->flag_space,
 		   info->flag_minus, info->flag_plus, info->flag_oct, info->flag_zero);
 	printf("\n[s_info] [\"%d\"Width] = %d [\"%d\"Precision] = %d [Length] = %d [Specifier] = %c",
 		   info->width_mod,
@@ -113,7 +105,8 @@ char *ft_strmaker(int space, int size)
 	if (!str)
 		return NULL;
 
-	while (i != size) {
+	while (i != size)
+	{
 		str[i] = (space) ? '0' : ' ';
 		i++;
 	}

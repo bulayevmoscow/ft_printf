@@ -5,15 +5,15 @@ int main()
 {
 	int testGH;
 	int a1, a2;
-	char string[] = "\n[1]test string % 015u!";
+	char string[] = "\n[1]test string %020.5u!";
 	char test[5];
 	test[0] = ' ';
 	unsigned long long int test3;
-	test3 = -500;
+	test3 = 500;
 	unsigned long long test4;
 	test4 = (unsigned int)test3;
 
-	a1 = ft_printf(string,5, 201);
+	a1 = ft_printf(string, test4 + 1);
 	printf(ANSI_COLOR_CYAN);
 	a2 = printf(string, test4);
 
