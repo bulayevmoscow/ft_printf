@@ -60,6 +60,8 @@ int check_precision(const char *str, t_info *info);
 int check_length(const char *str, t_info *info);
 int check_length_ext(const char *str, t_info *info);
 int check_specifier(const char *str, t_info *info);
+//Stars
+void stars_manager(t_info *info, va_list arg_list);
 //Pusher
 int pusher_manager(t_info *info,va_list arg_list);
 int pusher_percent(t_info *info, va_list arg_list);
@@ -69,6 +71,7 @@ char *pusher_string_width(t_info *info, char *str);
 int pusher_d_i(t_info *info, va_list arg_list);
 int pusher_d_i_2(t_info *info, char *str);
 char *pusher_d_i_2_precision(t_info *info, char *str);
+int pusher_u(t_info *info, va_list arg_list);
 //String Width Maker
 char *ft_strmaker(int space, int size);
 //Add to lib
@@ -79,6 +82,7 @@ char			*ft_itoa_external(long long int n);
 int print_result();
 void debugStruct();
 void removeStruct();
+
 
 
 

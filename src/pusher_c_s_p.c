@@ -117,7 +117,7 @@ char *ft_strmaker(int space, int size)
 		str[i] = (space) ? '0' : ' ';
 		i++;
 	}
-	str[size + 1] = '\0';
+	str[size] = '\0';
 	return str;
 
 }
