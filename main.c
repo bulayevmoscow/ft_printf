@@ -3,6 +3,7 @@
 
 int main()
 {
+	int testGH;
 	int a1, a2;
 	char string[] = "\n[1]test string % 015u!";
 	char test[5];
