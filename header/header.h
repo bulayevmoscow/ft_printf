@@ -73,7 +73,9 @@ int pusher_d_i_2(t_info *info, char *str);
 char *pusher_d_i_2_precision(t_info *info, char *str);
 int pusher_u(t_info *info, va_list arg_list);
 int pusher_f(t_info *info, va_list arg_list);
-void pusher_f_split(long *in,long double *de, t_info *info, va_list arg_list);
+int pusher_f_split(long double *in,long double *de, t_info *info, va_list arg_list);
+void round_float(long double *nbr, int precision);
+int pusher_f_join(double long nbr1, char *nbr2, t_info *info);
 //String Width Maker
 char *ft_strmaker(int space, int size);
 //Add to lib

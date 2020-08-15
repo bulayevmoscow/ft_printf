@@ -5,13 +5,13 @@ int main()
 {
 	int testGH;
 	int a1, a2;
-	char string[] = "\n[1]test string %-+05.4Lf!";
+	char string[] = "\n[1]test string %-20.Lf!";
 	char test[5];
 	test[0] = ' ';
 	unsigned long long int test3;
 	test3 = 500;
 	long double test4;
-	test4 = 123.4567L;
+	test4 = 12;
 
 	a1 = ft_printf(string, test4);
 	printf(ANSI_COLOR_CYAN);

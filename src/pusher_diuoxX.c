@@ -39,6 +39,7 @@ int pusher_d_i_2(t_info *info, char *str)
 		*pos = ' ';
 	if (ft_atoi(str) >= 0 && info->flag_plus)
 		*pos = '+';
+
 	printf("\n[pusher_d_i_2][0] Result is %s", str);
 	str1 = str;
 	str = ft_strjoin(pos, str);
@@ -78,6 +79,7 @@ char *pusher_d_i_2_precision(t_info *info, char *str)
 	return (str1);
 
 }
+
 int pusher_u(t_info *info, va_list arg_list)
 {
 	char *str;
@@ -85,11 +87,11 @@ int pusher_u(t_info *info, va_list arg_list)
 
 	stars_manager(info, arg_list);
 	if (info->length == 0)
-		nbr = va_arg(arg_list,unsigned int);
+		nbr = va_arg(arg_list, unsigned int);
 	if (info->length == pf_hh)
-		nbr = (unsigned char) va_arg(arg_list,unsigned int);
+		nbr = (unsigned char) va_arg(arg_list, unsigned int);
 	if (info->length == pf_h)
-		nbr = (unsigned short int) va_arg(arg_list,unsigned int);
+		nbr = (unsigned short int) va_arg(arg_list, unsigned int);
 	if (info->length == pf_l)
 		nbr = va_arg(arg_list, unsigned long int);
 	if (info->length == pf_ll)
