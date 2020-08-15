@@ -38,9 +38,7 @@ int pusher_percent(t_info *info, va_list arg_list)
 
 	str = ft_strnew(2);
 	if (str == NULL)
-	{
 		return (-1);
-	}
 	*str = '%';
 	pushModel(str, model, 125);
 
@@ -49,14 +47,17 @@ int pusher_percent(t_info *info, va_list arg_list)
 int pusher_string(t_info *info, va_list arg_list)
 {
 	char *str;
+	char *import;
 
+	if (NULL == (import = va_arg(arg_list, char *)))
+		return (-1);
 	stars_manager(info, arg_list);
 	if (info->precision_mod == 1)
 		str = ft_strnew(0);
 	if (info->precision_mod == 0 && info->precision != -1)
-		str = ft_strsub(va_arg(arg_list, char *), 0, info->precision);
+		str = ft_strsub(import, 0, info->precision);
 	if (info->precision_mod == 0 && info->precision == -1)
-		str = ft_strdup(va_arg(arg_list, char *));
+		str = ft_strdup(import);
 	if (info->width)
 		str = pusher_string_width(info, str);
 	printf("\n[pusher_string]precision = %s", str);

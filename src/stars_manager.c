@@ -1,7 +1,7 @@
 //
 // Created by Kudzu Psylocke on 8/14/20.
 //
-#include <../header/header.h>
+#include "../header/header.h"
 
 void	stars_manager(t_info *info, va_list arg_list)
 {

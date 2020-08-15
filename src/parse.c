@@ -78,6 +78,7 @@ int parsePros(char *str, va_list arg_list)
 	t_info test;
 
 	test = info_init();
+
 	len = check_manager(str, &test);
 	pusher_manager(&test, arg_list);
 	return len;

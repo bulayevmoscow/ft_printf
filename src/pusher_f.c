@@ -1,15 +1,16 @@
 //
 // Created by Kudzu Psylocke on 8/14/20.
 //
-#include "../header/header.h"
+# include "../header/header.h"
 
 int pusher_f(t_info *info, va_list arg_list)
 {
+
 	long double nbr1;
 	long double nbr2;
 	stars_manager(info, arg_list);
-	pusher_f_split(&nbr1, &nbr2, info, arg_list);
-	printf("\n[pusher_f]Get nbr_i = %Lf nbr_d = %.20Lf", nbr1, nbr2);
+	return (pusher_f_split(&nbr1, &nbr2, info, arg_list));
+
 }
 
 int pusher_f_split(long double *in, long double *de, t_info *info,
@@ -67,7 +68,8 @@ int pusher_f_join(double long nbr1, char *nbr2, t_info *info)
 	pos = (nbr1 >= 0) ? 1 : -1;
 	if (NULL == (nbr = ft_itoa_external_unsgn((unsigned long long) nbr1 * pos)))
 		return (-1);
-	pusher_f_join_2(pos, nbr);
+	if (-1 == pusher_f_join_2(pos, nbr))
+		return (-1);
 	if ((ft_strlen(nbr2) == 0 && info->flag_oct) || ft_strlen(nbr2) > 0)
 	{
 		buff = nbr;
@@ -94,4 +96,5 @@ int pusher_f_join_2(char pos, char *nbr)
 			return (-1);
 		free(buff);
 	}
+	return (0);
 }
