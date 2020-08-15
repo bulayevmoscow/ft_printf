@@ -9,12 +9,9 @@ int pusher_f(t_info *info, va_list arg_list)
 	long double nbr2;
 	stars_manager(info, arg_list);
 	pusher_f_split(&nbr1, &nbr2, info, arg_list);
-
-
 	printf("\n[pusher_f]Get nbr_i = %Lf nbr_d = %.20Lf", nbr1, nbr2);
 }
 
-//int pusher_u
 int pusher_f_split(long double *in, long double *de, t_info *info,
 				   va_list arg_list)
 {
@@ -27,8 +24,8 @@ int pusher_f_split(long double *in, long double *de, t_info *info,
     va_arg(arg_list, long double);
 	*in = (long int) nbr;
 	nbr -= *in;
-	*de = nbr = (nbr >= 0) ? nbr : nbr * -1;
-
+	nbr = (nbr >= 0) ? nbr : nbr * -1;
+	*de = nbr;
 	info->precision = (info->precision == -1) ? 6 : info->precision;
 	str = ft_strnew(info->precision);
 	if (str == NULL)
@@ -41,8 +38,7 @@ int pusher_f_split(long double *in, long double *de, t_info *info,
 		nbr -= (long int) nbr;
 	}
 	printf("\n[pusher_f_split] Make str %s", str);
-	return pusher_f_join(*in, str, info);
-
+	return (pusher_f_join(*in, str, info));
 }
 
 void round_float(long double *nbr, int precision)
@@ -69,32 +65,33 @@ int pusher_f_join(double long nbr1, char *nbr2, t_info *info)
 	char *buff;
 
 	pos = (nbr1 >= 0) ? 1 : -1;
-	nbr = ft_itoa_external_unsgn((unsigned long long) nbr1 * pos);
-	if (nbr == NULL)
+	if (NULL == (nbr = ft_itoa_external_unsgn((unsigned long long) nbr1 * pos)))
 		return (-1);
-	if (pos == -1)
-	{
-		buff = nbr;
-		nbr = ft_strjoin("-", nbr);
-		if (nbr == NULL)
-			return (-1);
-		free(buff);
-	}
-	printf("\n[pusher_f_join]ft_strlen of nbr2 = %d", ft_strlen(nbr2));
+	pusher_f_join_2(pos, nbr);
 	if ((ft_strlen(nbr2) == 0 && info->flag_oct) || ft_strlen(nbr2) > 0)
 	{
 		buff = nbr;
-		nbr = ft_strjoin(nbr, ".");
-		if (nbr == NULL)
+		if (NULL == (nbr = ft_strjoin(nbr, ".")))
 			return (-1);
 		free(buff);
 	}
 	buff = nbr;
-	nbr = ft_strjoin(nbr, nbr2);
-	if (nbr == NULL)
+	if (NULL == (nbr = ft_strjoin(nbr, nbr2)))
 		return (-1);
 	free(buff);
 	free(nbr2);
-	printf("\n[pusher_f_join][%d]nbr = %s",pos, nbr);
 	return (pusher_d_i_2(info, nbr));
+}
+
+int pusher_f_join_2(char pos, char *nbr)
+{
+	char *buff;
+
+	if (pos == -1)
+	{
+		buff = nbr;
+		if (NULL == (nbr = ft_strjoin("-", nbr)))
+			return (-1);
+		free(buff);
+	}
 }

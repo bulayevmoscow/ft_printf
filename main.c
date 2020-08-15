@@ -5,12 +5,12 @@ int main()
 {
 	int testGH;
 	int a1, a2;
-	char string[] = "\n[1]test string %-20.Lf!";
+	char string[] = "\n[1]test string %-20f!";
 	char test[5];
 	test[0] = ' ';
 	unsigned long long int test3;
 	test3 = 500;
-	long double test4;
+	double test4;
 	test4 = 12;
 
 	a1 = ft_printf(string, test4);
