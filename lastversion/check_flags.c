@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 01:51:43 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 13:48:40 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 14:03:27 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		check_manager(char *str, t_info *info)
 	spec = check_specifier(str + len, info);
 	if (spec == -1)
 	{
-		push_mopdel(ft_strsub(str, 0, 1), model, 4);
+		push_mopdel(ft_strsub(str, 0, 1), g_model, 4);
 		info->specifier = 0;
 		return (len);
 	}

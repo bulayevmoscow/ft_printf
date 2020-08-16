@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:00:54 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 13:53:36 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 14:13:52 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		parse_main(const char *str, va_list arg_list)
 {
 	int			ft_printf;
 
-	model = push_mopdel(str, NULL, 1);
+	g_model = push_mopdel(str, NULL, 1);
 	parse_sec(str, arg_list);
 	debug_struct();
 	ft_printf = print_result();
@@ -30,7 +30,7 @@ int		print_result(void)
 	int			i;
 	t_model		*model1;
 
-	model1 = model;
+	model1 = g_model;
 	model1 = model1->next;
 	len = 0;
 	while (model1)
@@ -56,7 +56,7 @@ int		parse_sec(const char *str, va_list arg_list)
 	{
 		if (str[len[1] + len[0]] == '%')
 		{
-			push_mopdel(ft_strsub(str, len[0], len[1]), model, 02);
+			push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 02);
 			len[1] += parse_pros((char *)str + (len[0] + len[1]), arg_list);
 			len[0] += len[1];
 			len[1] = 0;
@@ -64,7 +64,8 @@ int		parse_sec(const char *str, va_list arg_list)
 		else
 			len[1]++;
 	}
-	push_mopdel(ft_strsub(str, len[0], len[1]), model, 022);
+	push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 022);
+	return (0);
 }
 
 int		parse_pros(char *str, va_list arg_list)
@@ -78,7 +79,7 @@ int		parse_pros(char *str, va_list arg_list)
 	return (len);
 }
 
-t_model	*push_mopdel(const char *str, t_model *model, int isnew)
+t_model	*push_mopdel(const char *str, t_model *g_model, int isnew)
 {
 	t_model		*model1;
 
@@ -88,8 +89,8 @@ t_model	*push_mopdel(const char *str, t_model *model, int isnew)
 	model1->next = NULL;
 	if (isnew == 1)
 		return (model1);
-	while (model->next != NULL)
-		model = (t_model *)model->next;
-	model->next = (t_model *)model1;
+	while (g_model->next != NULL)
+		g_model = (t_model *)g_model->next;
+	g_model->next = (t_model *)model1;
 	return (model1);
 }

@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 13:52:31 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 13:53:27 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 14:03:14 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void		debug_struct(void)
 	t_model		*model1;
 
 	i = 0;
-	model1 = model;
+	model1 = g_model;
 	while (model1)
 	{
 		if (model1->next == NULL)
@@ -26,7 +26,7 @@ void		debug_struct(void)
 		model1 = model1->next;
 		i++;
 	}
-	model1 = model;
+	model1 = g_model;
 	model1 = model1->next;
 	while (model1)
 	{
@@ -41,9 +41,9 @@ void		remove_struct(void)
 	t_model		*model1;
 	t_model		*buffer;
 
-	model1 = model;
+	model1 = g_model;
 	model1 = model1->next;
-	free(model);
+	free(g_model);
 	while (model1->value)
 	{
 		free(model1->str);

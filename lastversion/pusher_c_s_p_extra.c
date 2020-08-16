@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 13:55:57 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 13:56:32 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 14:03:25 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		pusher_c(t_info *info, va_list arg_list)
 	if (str == NULL)
 		return (-1);
 	*str = va_arg(arg_list, int);
-	push_mopdel(str, model, 125);
+	push_mopdel(str, g_model, 125);
 }
 
 int		pusher_percent(t_info *info, va_list arg_list)
@@ -31,5 +31,5 @@ int		pusher_percent(t_info *info, va_list arg_list)
 	if (str == NULL)
 		return (-1);
 	*str = '%';
-	push_mopdel(str, model, 125);
+	push_mopdel(str, g_model, 125);
 }

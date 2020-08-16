@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:52:28 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 13:50:15 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 14:03:50 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct		s_model
 	char			*str;
 	int				value;
 	struct s_model	*next;
-} 					t_model;
+}					t_model;
 
 typedef struct		s_info
 {
@@ -59,13 +59,13 @@ typedef struct		s_info
 
 t_info				info_init();
 
-t_model				*model;
+t_model				*g_model;
 
 int					ft_printf(const char *input, ...);
 int					parse_main(const char *str, va_list arg_list);
 int					parse_sec(const char *str, va_list arg_list);
 int					parse_pros(char *str, va_list arg_list);
-t_model				*push_mopdel(const char *str, t_model *model, int isNew);
+t_model				*push_mopdel(const char *str, t_model *g_model, int isnew);
 int					parse_percent(const char *str);
 int					check_manager(char *str, t_info *info);
 int					check_flag(char *str, t_info *info);

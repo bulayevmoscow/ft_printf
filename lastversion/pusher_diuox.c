@@ -21,14 +21,8 @@ int		pusher_d_i(t_info *info, va_list arg_list)
 	return (0);
 }
 
-int		pusher_d_i_2(t_info *info, char *str)
+void	ft_helpagain(char *str, t_info *info, char *pos)
 {
-	char	*pos;
-	char	*str1;
-	int		i;
-
-	i = -1;
-	pos = ft_strnew(1);
 	if (!((str[0] == '-' || str[0] == '+') &&
 	ft_strlen(str) > info->precision) && \
 	!((str[0] != '-' && str[0] != '+')
@@ -39,6 +33,17 @@ int		pusher_d_i_2(t_info *info, char *str)
 		*pos = ' ';
 	if (ft_atoi(str) >= 0 && info->flag_plus)
 		*pos = '+';
+}
+
+int		pusher_d_i_2(t_info *info, char *str)
+{
+	char	*pos;
+	char	*str1;
+	int		i;
+
+	i = -1;
+	pos = ft_strnew(1);
+	ft_helpagain(str, info, pos);
 	str1 = str;
 	str = ft_strjoin(pos, str);
 	info->flag_zero = (info->precision != -1 || info->flag_minus) ? 0
@@ -53,7 +58,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 		}
 	free(str1);
 	free(pos);
-	push_mopdel(str, model, 225);
+	push_mopdel(str, g_model, 225);
 	return (0);
 }
 

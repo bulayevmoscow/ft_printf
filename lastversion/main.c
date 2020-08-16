@@ -5,7 +5,7 @@ int main()
 {
 	int testGH;
 	int a1, a2;
-	char string[] = "\n[1]test string %-20f!";
+	char string[] = "\n[1]test string %-20d!";
 	char test[5];
 	test[0] = ' ';
 	unsigned long long int test3;
@@ -23,7 +23,7 @@ int main()
 		printf("\nУспех = %d", a1);
 	} else {
 		printf(ANSI_COLOR_RED);
-		printf("\nНеудача a1 = %d, a2 = %d", a1, a2);
+		printf("\nНеудача a1 = %+d, a2 = %-d", a1, a2);
 	}
 	printf(ANSI_COLOR_RESET);
 
