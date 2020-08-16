@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 01:51:43 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 02:44:55 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 13:48:40 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		check_manager(char *str, t_info *info)
 	spec = check_specifier(str + len, info);
 	if (spec == -1)
 	{
-		pushModel(ft_strsub(str, 0, 1), model, 4);
+		push_mopdel(ft_strsub(str, 0, 1), model, 4);
 		info->specifier = 0;
 		return (len);
 	}
@@ -50,72 +50,22 @@ int		check_flag(char *str, t_info *info)
 		else if (*(str + len + 1) == '0')
 			info->flag_zero = 1;
 		else
-			break;
+			break ;
 		len++;
 	}
-	return (len);
-}
-
-int		check_width(char *str, t_info *info)
-{
-	int		width;
-	int		len;
-	
-	len = 0;
-	if (*str == '*') {
-		info->width_mod = 2;
-		return ++len;
-	}
-	width = ft_atoi(str + len);
-	info->width = width;
-	if (width == 0)
-		return (0);
-	else
-		while (ft_isdigit(*(str + len)))
-			len++;
-	return len;
-}
-
-int		check_precision(const char *str, t_info *info)
-{
-	int		len;
-	int		precision;
-
-	len = 0;
-	precision = 0;
-	if (*str == '.') {
-		len = 1;
-		if (!ft_isdigit(*(str + 1))){
-			info->precision_mod = 1;
-		}
-		if (*(str + 1) == '*'){
-			info->precision_mod = 2;
-			return ++len;
-		}
-		precision = ft_atoi(str + len);
-		while (ft_isdigit(*(str + len)))
-			len++;
-	} else {
-	    info->precision = -1;
-        return 0;
-	}
-	if (precision != 0)
-		info->precision = precision;
-	else
-		info->precision_mod = 1;
 	return (len);
 }
 
 int		check_length(const char *str, t_info *info)
 {
 	if (*str == 'j')
-		info->length = pf_j;
+		info->length = PF_J;
 	if (*str == 'z')
-		info->length = pf_z;
+		info->length = PF_Z;
 	if (*str == 't')
-		info->length = pf_t;
+		info->length = PF_T;
 	if (*str == 'L')
-		info->length = pf_L;
+		info->length = PF_Y;
 	if (info->length != 0)
 		return (1);
 	return (check_length_ext(str, info));
@@ -123,20 +73,24 @@ int		check_length(const char *str, t_info *info)
 
 int		check_length_ext(const char *str, t_info *info)
 {
-	if (*str == 'h') {
-		if (*(str + 1) == 'h') {
-			info->length = pf_hh;
+	if (*str == 'h')
+	{
+		if (*(str + 1) == 'h')
+		{
+			info->length = PF_HH;
 			return (2);
 		}
-		info->length = pf_h;
+		info->length = PF_H;
 		return (1);
 	}
-	if (*str == 'l') {
-		if (*(str + 1) == 'l') {
-			info->length = pf_ll;
+	if (*str == 'l')
+	{
+		if (*(str + 1) == 'l')
+		{
+			info->length = PF_LL;
 			return (2);
 		}
-		info->length = pf_l;
+		info->length = PF_L;
 		return (1);
 	}
 	return (0);
@@ -144,15 +98,16 @@ int		check_length_ext(const char *str, t_info *info)
 
 int		check_specifier(const char *str, t_info *info)
 {
-	if (*(str) == 'd' || *(str) == 'i' || *(str) == 'u' || *(str) == 'o' || \
-    *(str) == 'x' || *(str) == 'X' || *(str) == 'f' || *(str) == 'F' || \
-    *(str) == 'E' || *(str) == 'e' || *(str) == 'g' || *(str) == 'G' || \
-    *(str) == 'a' || *(str) == 'A' || *(str) == 'c' || *(str) == 's' || \
-    *(str) == 'p' || *(str) == 'n' || *(str) == '%') {
+	if (*(str) == 'd' || *(str) == 'i' || *(str) == 'u' || *(str) == 'o' ||
+	*(str) == 'x' || *(str) == 'X' || *(str) == 'f' || *(str) == 'F' ||
+	*(str) == 'E' || *(str) == 'e' || *(str) == 'g' || *(str) == 'G' ||
+	*(str) == 'a' || *(str) == 'A' || *(str) == 'c' || *(str) == 's' ||
+	*(str) == 'p' || *(str) == 'n' || *(str) == '%')
+	{
 		info->specifier = *str;
 	}
 	else if (*(str) == '%')
-		return -2;
+		return (-2);
 	else
 		return (-1);
 	return (1);

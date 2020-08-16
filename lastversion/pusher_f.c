@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:21:44 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 02:45:57 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 13:10:54 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		pusher_f_split(long double *in, long double *de, t_info *info,
 	double long		nbr;
 
 	i = 0;
-	nbr = (info->length != pf_L) ? (long double)va_arg(arg_list, double) :
+	nbr = (info->length != PF_Y) ? (long double)va_arg(arg_list, double) :
 	va_arg(arg_list, long double);
 	*in = (long int)nbr;
 	nbr -= *in;

@@ -8,16 +8,17 @@ int		pusher_d_i(t_info *info, va_list arg_list)
 	stars_manager(info, arg_list);
 	if (info->length == 0)
 		nbr = va_arg(arg_list, int);
-	if (info->length == pf_hh)
+	if (info->length == PF_HH)
 		nbr = (signed char)va_arg(arg_list, int);
-	if (info->length == pf_h)
+	if (info->length == PF_H)
 		nbr = (short int)va_arg(arg_list, int);
-	if (info->length == pf_l)
+	if (info->length == PF_L)
 		nbr = va_arg(arg_list, long int);
-	if (info->length == pf_ll)
+	if (info->length == PF_LL)
 		nbr = va_arg(arg_list, long long int);
 	str = ft_itoa_external(nbr);
 	pusher_d_i_2(info, str);
+	return (0);
 }
 
 int		pusher_d_i_2(t_info *info, char *str)
@@ -52,7 +53,8 @@ int		pusher_d_i_2(t_info *info, char *str)
 		}
 	free(str1);
 	free(pos);
-	pushModel(str, model, 225);
+	push_mopdel(str, model, 225);
+	return (0);
 }
 
 char	*pusher_d_i_2_precision(t_info *info, char *str)
@@ -77,13 +79,13 @@ int		pusher_u(t_info *info, va_list arg_list)
 	stars_manager(info, arg_list);
 	if (info->length == 0)
 		nbr = va_arg(arg_list, unsigned int);
-	if (info->length == pf_hh)
+	if (info->length == PF_HH)
 		nbr = (unsigned char)va_arg(arg_list, unsigned int);
-	if (info->length == pf_h)
+	if (info->length == PF_H)
 		nbr = (unsigned short int)va_arg(arg_list, unsigned int);
-	if (info->length == pf_l)
+	if (info->length == PF_L)
 		nbr = va_arg(arg_list, unsigned long int);
-	if (info->length == pf_ll)
+	if (info->length == PF_LL)
 		nbr = va_arg(arg_list, unsigned long long int);
 	info->flag_space = 0;
 	info->flag_plus = 0;

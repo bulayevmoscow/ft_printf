@@ -6,7 +6,7 @@
 /*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:52:28 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 03:03:27 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/16 13:50:15 by artemignate      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define ANSI_COLOR_RED     "\x1b[31m"
 # define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -24,14 +25,14 @@
 # define ANSI_COLOR_CYAN    "\x1b[36m"
 # define ANSI_COLOR_RESET   "\x1b[0m"
 
-# define pf_hh 1
-# define pf_h 2
-# define pf_l 3
-# define pf_ll 4
-# define pf_j 5
-# define pf_z 6
-# define pf_t 7
-# define pf_L 8
+# define PF_HH 1
+# define PF_H 2
+# define PF_L 3
+# define PF_LL 4
+# define PF_J 5
+# define PF_Z 6
+# define PF_T 7
+# define PF_Y 8
 
 typedef struct		s_model
 {
@@ -61,10 +62,10 @@ t_info				info_init();
 t_model				*model;
 
 int					ft_printf(const char *input, ...);
-int					parseMain(const char *str, va_list arg_list);
-int					parseSec(const char *str, va_list arg_list);
-int					parsePros(char *str, va_list arg_list);
-t_model				*pushModel(const char *str, t_model *model, int isNew);
+int					parse_main(const char *str, va_list arg_list);
+int					parse_sec(const char *str, va_list arg_list);
+int					parse_pros(char *str, va_list arg_list);
+t_model				*push_mopdel(const char *str, t_model *model, int isNew);
 int					parse_percent(const char *str);
 int					check_manager(char *str, t_info *info);
 int					check_flag(char *str, t_info *info);
@@ -105,7 +106,7 @@ char				*ft_itoa_external(long long int n);
 static int			ft_itoa_external_unsgn_len(unsigned long long int n);
 char				*ft_itoa_external_unsgn(unsigned long long int n);
 int					print_result(void);
-void				debugStruct(void);
-void				removeStruct(void);
+void				debug_struct(void);
+void				remove_struct(void);
 
 #endif
