@@ -33,15 +33,23 @@ int		pusher_string(t_info *info, va_list arg_list)
 {
 	char	*str;
 	char	*import;
+	char	*buffer;
 
-	if (NULL == (import = va_arg(arg_list, char *)))
-		return (-1);
+	info->flag_zero = (info->flag_minus) ? 0 : info->flag_zero;
 	stars_manager(info, arg_list);
-	if (info->precision_mod == 1)
+	if (NULL == (import = va_arg(arg_list, char *)) && info->precision_mod != 1)
+	{
+		if (info->precision == -1)
+			str = ft_strdup("(null)");
+		else
+			str = ft_strsub("(null)", 0, info->precision);
+	}
+
+	else if (info->precision_mod == 1)
 		str = ft_strnew(0);
-	if (info->precision_mod == 0 && info->precision != -1)
+	else if (info->precision_mod == 0 && info->precision != -1)
 		str = ft_strsub(import, 0, info->precision);
-	if (info->precision_mod == 0 && info->precision == -1)
+	else if (info->precision_mod == 0 && info->precision == -1)
 		str = ft_strdup(import);
 	if (info->width)
 		str = pusher_string_width(info, str);

@@ -46,11 +46,13 @@ void		remove_struct(void)
 	free(g_model);
 	while (model1->value)
 	{
-		free(model1->str);
+//		free(model1->str);
 		buffer = model1->next;
 		free(model1);
 		model1 = buffer;
-		if (buffer->next == NULL)
+		if (buffer == NULL)
+			return ;
+		if (buffer->next == NULL )
 		{
 			free(model1->str);
 			buffer = model1->next;
@@ -58,5 +60,6 @@ void		remove_struct(void)
 			model1 = buffer;
 			break ;
 		}
+//		printf("kekw");
 	}
 }

@@ -3,17 +3,14 @@
 
 int main()
 {
-	int testGH;
 	int a1, a2;
-	char string[] = "\n[1]test string %-20f!";
-	char test[5];
-	test[0] = ' ';
-	unsigned long long int test3;
-	test3 = 500;
-	double test4;
-	test4 = 12;
+//	char string[] = "\n[1]test string %d!";
+	char string[] = "\n[1]test string %0120.3f!";
 
-	a1 = ft_printf(string, test4);
+	double test4;
+	test4 = -12.23;
+
+	a1 = ft_printf("%.6i", -3);
 	printf(ANSI_COLOR_CYAN);
 	a2 = printf(string, test4);
 
@@ -23,7 +20,7 @@ int main()
 		printf("\nУспех = %d", a1);
 	} else {
 		printf(ANSI_COLOR_RED);
-		printf("\nНеудача a1 = %d, a2 = %d", a1, a2);
+		printf("\nНеудача a1 = %+d, a2 = %-d", a1, a2);
 	}
 	printf(ANSI_COLOR_RESET);
 

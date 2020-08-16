@@ -46,11 +46,11 @@ int pusher_d_i_2(t_info *info, char *str)
 
 	printf("\n[pusher_d_i_2][1] Result is %s", str);
 
-	info->flag_zero = (info->precision != -1 || info->flag_minus) ? 0
-																  : info->flag_zero;
+//	info->flag_zero = (info->precision != -1 || info->flag_minus) ? 0
+//																  : info->flag_zero;
 	if (info->width)
 		str = pusher_string_width(info, str);
-	while (str[++i] && info->flag_zero)
+	while (str[++i] && (info->flag_zero || info->precision != 0))
 		if ((str[i] == '+' || str[i] == '-') && i != 0)
 		{
 			str[0] = str[i];

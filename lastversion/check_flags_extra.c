@@ -24,7 +24,7 @@ int		ft_help(const char *str, t_info *info, int *len, int *precision)
 	}
 	*precision = ft_atoi(str + *len);
 	while (ft_isdigit(*(str + *len)))
-		len++;
+		*len = *len + 1;
 	return (0);
 }
 
