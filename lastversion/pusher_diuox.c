@@ -44,7 +44,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 	i = -1;
 	pos = ft_strnew(1);
 	ft_helpagain(str, info, pos);
-	str1 = str;
+//	str1 = str;
 	str = ft_strjoin(pos, str);
 	info->flag_zero = (info->precision != -1 || info->flag_minus) ? 0
 	: info->flag_zero;
@@ -56,7 +56,6 @@ int		pusher_d_i_2(t_info *info, char *str)
 			str[0] = str[i];
 			str[i] = '0';
 		}
-	free(str1);
 	free(pos);
 	push_mopdel(str, g_model, 225);
 	return (0);

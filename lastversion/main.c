@@ -9,9 +9,12 @@ int main()
 
 	double test4;
 	test4 = -12.23;
+//	00034
 
-	a1 = ft_printf("%-8.5i", 34);
-//	a2 = printf("%.03s", NULL);
+	a1 = ft_printf("%-12.6d", -5);
+	printf("\n");
+	a2 = printf("%8.5i", -34);
+
 
 
 
