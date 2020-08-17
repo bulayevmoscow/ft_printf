@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:52:28 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/17 21:41:43 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/17 23:12:25 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ t_model				*g_model;
 int					ft_printf(const char *input, ...);
 int					parse_main(const char *str, va_list arg_list);
 int					parse_sec(const char *str, va_list arg_list);
+char				*ft_spec_trans_xx(unsigned long int a, int os);
 int					parse_pros(char *str, va_list arg_list);
 t_model				*push_mopdel(const char *str, t_model *g_model, int isnew);
 int					parse_percent(const char *str);
@@ -77,7 +78,7 @@ int					check_specifier(const char *str, t_info *info);
 int					ft_atoi(const char *str);
 int					ft_isdigit(int c);
 void				ft_putchar(char c);
-char				*ft_spec_trans_x(int a, int os);
+char				*ft_spec_trans_x(unsigned long int a, int os);
 char				*ft_strdup(const char *s1);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlen(const char *s);
@@ -108,6 +109,7 @@ static int			ft_itoa_external_unsgn_len(unsigned long long int n);
 char				*ft_itoa_external_unsgn(unsigned long long int n);
 int					print_result(void);
 void				debug_struct(void);
+char				*ft_str_concat(char *str1, int d1,char *str2, int d2);
 void				remove_struct(void);
 char 				*ft_str_concat(char *str1, int d1,char *str2, int d2);
 
