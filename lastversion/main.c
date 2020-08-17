@@ -11,7 +11,7 @@ int main()
 	test4 = -12.23;
 //	00034
 
-	a1 = ft_printf("%-12.6d", -5);
+	a1 = ft_printf("%8.5i", -34);
 	printf("\n");
 	a2 = printf("%8.5i", -34);
 
@@ -27,7 +27,7 @@ int main()
 		printf("\nНеудача a1 = %+d, a2 = %+d", a1, a2);
 	}
 	printf(ANSI_COLOR_RESET);
-
+	printf("\n%s\n", ft_str_concat("Hello", 0, "World" , 0));
 	return 0;
 
 

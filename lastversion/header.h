@@ -108,5 +108,6 @@ char				*ft_itoa_external_unsgn(unsigned long long int n);
 int					print_result(void);
 void				debug_struct(void);
 void				remove_struct(void);
+char 				*ft_str_concat(char *str1, int d1,char *str2, int d2);
 
 #endif

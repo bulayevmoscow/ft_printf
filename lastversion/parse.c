@@ -85,7 +85,9 @@ t_model	*push_mopdel(const char *str, t_model *g_model, int isnew)
 
 	model1 = (t_model *)malloc(sizeof(t_model));
 	model1->value = isnew;
-	model1->str = (char *)str;
+	model1->str = ft_strdup(str);
+	if (isnew != 1)
+		free(str);
 	model1->next = NULL;
 	if (isnew == 1)
 		return (model1);

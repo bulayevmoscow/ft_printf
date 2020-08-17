@@ -46,7 +46,7 @@ void		remove_struct(void)
 	free(g_model);
 	while (model1->value)
 	{
-//		printf("\"[%d]\"%s\"",model1->value, model1->str);
+		printf("\n%s - Remove", model1->str);
 		buffer = model1->next;
 		free(model1->str);
 		free(model1);
