@@ -21,12 +21,12 @@ int		pusher_d_i(t_info *info, va_list arg_list)
 	return (0);
 }
 
-void	ft_helpagain(char *str, t_info *info, char *pos)
+void	ft_helpagain(char **str, t_info *info, char **pos)
 {
-	if (!((str[0] == '-' || str[0] == '+') &&
+	if (!(((*str[0]) == '-' || *str[0] == '+') &&
 	ft_strlen(str) > info->precision) && \
-	!((str[0] != '-' && str[0] != '+')
-	&& ft_strlen(str) >= info->precision) &&
+	!((*str[0] != '-' && *str[0] != '+')
+	&& ft_strlen(*str) >= info->precision) &&
 		info->precision != -1)
 		str = pusher_d_i_2_precision(info, str);
 	if (ft_atoi(str) >= 0 && info->flag_space && !info->flag_plus)
@@ -40,13 +40,16 @@ int		pusher_d_i_2(t_info *info, char *str)
 	char	*pos;
 	char	*str1;
 	int		i;
-
+	printf("\n\"%s\"", str);
 	i = -1;
 	pos = ft_strnew(1);
-	ft_helpagain(str, info, pos);
+	ft_helpagain(&str, info, &pos);
+	printf("\n\"%s\"", str);
 	str = ft_str_concat(pos, 1, str, 1);
+	printf("\n\"%s\"", str);
 	info->flag_zero = (info->precision != -1 || info->flag_minus) ? 0
 	: info->flag_zero;
+
 	if (info->width)
 		str = pusher_string_width(info, str);
 	while (str[++i] && info->flag_zero)
@@ -55,6 +58,9 @@ int		pusher_d_i_2(t_info *info, char *str)
 			str[0] = str[i];
 			str[i] = '0';
 		}
+	if (info->precision != -1)
+		str = pusher_d_i_2_precision(info, str);
+
 	push_mopdel(ft_strdup(str), g_model, 225);
 	return (0);
 }
