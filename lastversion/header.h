@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
+/*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:52:28 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 14:03:50 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/17 21:41:43 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int					check_specifier(const char *str, t_info *info);
 int					ft_atoi(const char *str);
 int					ft_isdigit(int c);
 void				ft_putchar(char c);
+char				*ft_spec_trans_x(int a, int os);
 char				*ft_strdup(const char *s1);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlen(const char *s);

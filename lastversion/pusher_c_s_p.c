@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pusher_c_s_p.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
+/*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:11:23 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/16 14:03:26 by artemignate      ###   ########.fr       */
+/*   Updated: 2020/08/17 21:42:42 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,64 @@ int		pusher_manager(t_info *info, va_list arg_list)
 		pusher_u(info, arg_list);
 	if (info->specifier == 'f')
 		pusher_f(info, arg_list);
+	if (info->specifier == 'x')
+		pusher_x(info, arg_list);
+	// if (info->specifier == 'o')
+	// 	pusher_o(info, arg_list);
+	// if (info->specifier == 'X')
+	// 	pusher_xx(info, arg_list);
 	return (0);
+}
+
+int		pusher_x(t_info *info, va_list arg_list)
+{
+	char			*str;
+	long long int	nbr;
+
+	stars_manager(info, arg_list);
+	if (info->length == 0)
+		nbr = va_arg(arg_list, int);
+	if (info->length == PF_HH)
+		nbr = (signed char)va_arg(arg_list, int);
+	if (info->length == PF_H)
+		nbr = (short int)va_arg(arg_list, int);
+	if (info->length == PF_L)
+		nbr = va_arg(arg_list, long int);
+	if (info->length == PF_LL)
+		nbr = va_arg(arg_list, long long int);
+	str = ft_spec_trans_x(nbr, 16);
+	pusher_d_i_2(info, str);
+	return (0);
+}
+
+char    *ft_spec_trans_x(int a, int os)
+{
+    int     i;
+    int     *str;
+    int     x;
+    char    *string;
+
+    x = 0;
+    str = (int *)malloc(sizeof(int) * 10);
+    while (a > os)
+    {
+        i = a / os;
+        str[x] = a - i * os;
+        a = i;
+        x++;
+    }
+    str[x] = i;
+    string = ft_strnew(x + 1);
+    i = x;
+    while (x >= 0)
+    {
+        if (str[x] > 9)
+            string[x] = str[x] + 87;
+        else
+            string[x] = str[x];
+        x--;
+    }
+    return (string);
 }
 
 int		pusher_string(t_info *info, va_list arg_list)
