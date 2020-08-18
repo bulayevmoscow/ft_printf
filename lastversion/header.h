@@ -94,7 +94,7 @@ int					pusher_string(t_info *info, va_list arg_list);
 char				*pusher_string_width(t_info *info, char *str);
 int					pusher_d_i(t_info *info, va_list arg_list);
 int					pusher_d_i_2(t_info *info, char *str);
-char				*pusher_d_i_2_precision(t_info *info, char *str);
+void				pusher_d_i_2_precision(t_info *info, char **str);
 int					pusher_u(t_info *info, va_list arg_list);
 int					pusher_f(t_info *info, va_list arg_list);
 int					pusher_f_split(long double *in, long double *de,
@@ -103,14 +103,17 @@ void				round_float(long double *nbr, int precision);
 int					pusher_f_join(double long nbr1, char *nbr2, t_info *info);
 int					pusher_f_join_2(char pos, char *nbr);
 char				*ft_strmaker(int space, int size);
-static int			ft_itoa_external_len(long long int n);
+int			ft_itoa_external_len(long long int n);
 char				*ft_itoa_external(long long int n);
-static int			ft_itoa_external_unsgn_len(unsigned long long int n);
+int			ft_itoa_external_unsgn_len(unsigned long long int n);
 char				*ft_itoa_external_unsgn(unsigned long long int n);
 int					print_result(void);
 void				debug_struct(void);
 char				*ft_str_concat(char *str1, int d1,char *str2, int d2);
 void				remove_struct(void);
 char 				*ft_str_concat(char *str1, int d1,char *str2, int d2);
-
+int					pusher_x(t_info *info, va_list arg_list);
+int					pusher_o(t_info *info, va_list arg_list);
+int					pusher_xx(t_info *info, va_list arg_list);
+int					pusher_p(t_info *info, va_list arg_list);
 #endif

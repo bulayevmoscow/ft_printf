@@ -5,17 +5,19 @@ int main()
 {
 	int a1, a2;
 //	char string[] = "\n[1]test string %d!";
-	char string[] = "%6.10d";
+//	char string[] = "%#10.122f";
 
 	double test4;
 	test4 = -12.23;
 //	00034
 
 
-
-//	a1 = ft_printf(string, -500);
+//
+	a1 = ft_printf("%lld", 9223372036854775808);
 	printf("\n");
-	a2 = printf(string, -500 + 1);
+	printf(ANSI_COLOR_GREEN);
+	a2 = printf("%lld", 9223372036854775808);
+//	a2 = printf("%");
 
 
 
