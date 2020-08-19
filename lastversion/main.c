@@ -13,11 +13,11 @@ int main()
 
 
 //test("%c", '
-	a1 = ft_printf("%-5c", '\1');
+	a1 = ft_printf("%c", '\0');
 //	a1 = ft_printf("%03.2d", 0);
 	printf("\n");
 	printf(ANSI_COLOR_GREEN);
-	a2 = printf("%-5c", '\0');
+	a2 = printf("%c", '\0');
 //	a2 = printf("%");
 
 

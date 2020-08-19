@@ -225,7 +225,7 @@ int		pusher_string(t_info *info, va_list arg_list)
 		str = ft_strdup(import);
 	if (info->width)
 		str = pusher_string_width(info, str);
-	push_mopdel(str, g_model, 125);
+	push_mopdel(str, g_model, 125, 0);
 }
 
 char	*pusher_string_width(t_info *info, char *str)

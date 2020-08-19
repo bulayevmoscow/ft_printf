@@ -51,7 +51,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 	pusher_d_i_2_precision(info, &str);
 	if (str == NULL)
 		return (-1);
-	push_mopdel(str, g_model, 10);
+	push_mopdel(str, g_model, 10, 0);
 	return 0;
 }
 

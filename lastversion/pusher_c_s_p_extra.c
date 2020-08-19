@@ -32,6 +32,6 @@ int		pusher_percent(t_info *info, va_list arg_list)
 	if (str == NULL)
 		return (-1);
 	*str = '%';
-	push_mopdel(str, g_model, 125);
+	push_mopdel(str, g_model, 125, 0);
 	return (0);
 }

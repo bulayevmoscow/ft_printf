@@ -66,7 +66,7 @@ int					parse_main(const char *str, va_list arg_list);
 int					parse_sec(const char *str, va_list arg_list);
 char				*ft_spec_trans_xx(unsigned long int a, int os);
 int					parse_pros(char *str, va_list arg_list);
-t_model				*push_mopdel(const char *str, t_model *g_model, int isnew);
+t_model				*push_mopdel(const char *str, t_model *g_model, int isnew, int len);
 int					parse_percent(const char *str);
 int					check_manager(char *str, t_info *info);
 int					check_flag(char *str, t_info *info);

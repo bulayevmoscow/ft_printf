@@ -16,7 +16,7 @@ int		parse_main(const char *str, va_list arg_list)
 {
 	int			ft_printf;
 
-	g_model = push_mopdel(str, NULL, 1);
+	g_model = push_mopdel(str, NULL, 1 , 0);
 	parse_sec(str, arg_list);
 	debug_struct();
 	ft_printf = print_result();
@@ -58,7 +58,7 @@ int		parse_sec(const char *str, va_list arg_list)
 	{
 		if (str[len[1] + len[0]] == '%')
 		{
-			push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 02);
+			push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 02, 0);
 			len[1] += parse_pros((char *)str + (len[0] + len[1]), arg_list);
 			len[0] += len[1];
 			len[1] = 0;
@@ -66,7 +66,7 @@ int		parse_sec(const char *str, va_list arg_list)
 		else
 			len[1]++;
 	}
-	push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 022);
+	push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 022, 0);
 	return (0);
 }
 
@@ -81,20 +81,20 @@ int		parse_pros(char *str, va_list arg_list)
 	return (len);
 }
 
-t_model	*push_mopdel(const char *str, t_model *g_model, int isnew)
+t_model	*push_mopdel(const char *str, t_model *g_model, int isnew, int len)
 {
 	t_model		*model1;
 
 	model1 = (t_model *)malloc(sizeof(t_model));
 	model1->value = isnew;
-	model1->str = ft_strdup(str);
-	if (isnew != 1)
-		free(str);
+	model1->str = str;
 	model1->next = NULL;
 	if (isnew == 1)
 		return (model1);
 	while (g_model->next != NULL)
 		g_model = (t_model *)g_model->next;
 	g_model->next = (t_model *)model1;
+	if (str[0])
+		ft_putchar('\0');
 	return (model1);
 }
