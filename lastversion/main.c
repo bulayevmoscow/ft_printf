@@ -13,11 +13,20 @@ int main()
 
 
 //test("%c", '
+<<<<<<< HEAD
 	a1 = ft_printf("%c", '\0');
+=======
+	a1 = ft_printf("@moulitest: %#.d %#.0o", 0, 0);
+>>>>>>> 6ee82b12fac0962da4ec2c285a4aa7ceee40f618
 //	a1 = ft_printf("%03.2d", 0);
+	// a1 = ft_printf("@moulitest: %#.o %#.0o", 0, 0);
 	printf("\n");
 	printf(ANSI_COLOR_GREEN);
+<<<<<<< HEAD
 	a2 = printf("%c", '\0');
+=======
+	a2 = printf("@moulitest: %#.d %#.0o", 0, 0);
+>>>>>>> 6ee82b12fac0962da4ec2c285a4aa7ceee40f618
 //	a2 = printf("%");
 
 

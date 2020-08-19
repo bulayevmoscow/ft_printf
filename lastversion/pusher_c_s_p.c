@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:11:23 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/17 23:20:31 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/19 20:27:15 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		pusher_x(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;
 	str = ft_spec_trans_x(nbr, 16);
-	if (info->flag_oct)
+	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0x"), 1, str, 1);
 
 	pusher_d_i_2(info, str);
@@ -122,7 +122,7 @@ int		pusher_o(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;;
 	str = ft_spec_trans_x(nbr, 8);
-	if (info->flag_oct)
+	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0"), 1, str, 1);
 	pusher_d_i_2(info, str);
 	return (0);
