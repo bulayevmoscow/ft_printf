@@ -16,13 +16,11 @@ int		parse_main(const char *str, va_list arg_list)
 {
 	int			ft_printf;
 
-	g_model = push_mopdel(str, NULL, 1 , 0);
+	g_model = push_mopdel(str, NULL, 1, 0);
 	parse_sec(str, arg_list);
 	debug_struct();
 	ft_printf = print_result();
-
 	remove_struct();
-//	exit(1);
 	return (ft_printf);
 }
 
@@ -38,8 +36,14 @@ int		print_result(void)
 	while (model1)
 	{
 		i = 0;
-		while (model1->str[i])
-			ft_putchar(model1->str[i++]);
+		while (model1->len-- > 0 || model1->str[i])
+		{
+			if (model1->str[i] == 1)
+				ft_putchar(NULL);
+			else
+				ft_putchar(model1->str[i]);
+			i++;
+		}
 		len += i;
 		if (model1->next == NULL)
 			break ;
@@ -87,14 +91,13 @@ t_model	*push_mopdel(const char *str, t_model *g_model, int isnew, int len)
 
 	model1 = (t_model *)malloc(sizeof(t_model));
 	model1->value = isnew;
-	model1->str = str;
+	model1->str = (char *)str;
+	model1->len = len;
 	model1->next = NULL;
 	if (isnew == 1)
 		return (model1);
 	while (g_model->next != NULL)
 		g_model = (t_model *)g_model->next;
 	g_model->next = (t_model *)model1;
-	if (str[0])
-		ft_putchar('\0');
 	return (model1);
 }

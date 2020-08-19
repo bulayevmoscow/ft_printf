@@ -38,6 +38,7 @@ typedef struct		s_model
 {
 	char			*str;
 	int				value;
+	int				len;
 	struct s_model	*next;
 }					t_model;
 

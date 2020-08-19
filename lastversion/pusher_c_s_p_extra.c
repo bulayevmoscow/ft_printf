@@ -14,14 +14,27 @@
 
 int		pusher_c(t_info *info, va_list arg_list)
 {
+	char	chr;
 	char	*str;
 
-	str = ft_strnew(1);
-	if (str == NULL)
-		return (-1);
-	str[0] = (char )va_arg(arg_list, int);
-	pusher_d_i_2(info, str);
-//	push_mopdel(str, g_model, 125);
+	chr = (char )va_arg(arg_list, int);
+	if (info->width)
+	{
+		str = ft_strmaker(info->flag_zero, info->width);
+		if (info->width && info->flag_minus)
+			str[0] = chr;
+		if (info->width && !info->flag_minus)
+			str[ft_strlen(str) - 1] = chr;
+		push_mopdel(str, g_model, 12, info->width);
+	} else
+	{
+		str = ft_strnew(1);
+		str[0] = chr;
+		push_mopdel(str, g_model, 12, 1);
+	}
+
+
+
 }
 
 int		pusher_percent(t_info *info, va_list arg_list)
