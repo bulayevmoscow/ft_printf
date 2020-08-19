@@ -130,13 +130,14 @@ char    *ft_spec_trans_x(unsigned long int a, int os)
     unsigned long int     i;
     int     *str;
     int     x;
-    char    *string;
 	int		f;
+	char	*str1;
+	char	*str2;
 
     x = 0;
     str = (int *)malloc(sizeof(int) * 10);
 	i = a;
-    while (a > os)
+    while (a >= os)
     {
         i = a / os;
         str[x] = a - i * os;
@@ -145,18 +146,24 @@ char    *ft_spec_trans_x(unsigned long int a, int os)
     }
     str[x] = i;
 	i = 0;
-    string = ft_strnew(x + 1);
+	str1 = ft_strnew(x + 1);
 	f = x;
     while (i <= f)
     {
         if (str[x] > 9)
-            string[i] = str[x] + 87;
+		{
+			printf("letter %d\n", str[x]);
+			str1[i] = str[x] + 87;
+		}
         else
-            string[i] = str[x] + 48;
+		{
+        	printf("number %d\n", str[x]);
+			str1[i] = str[x] + '0';
+		}
         --x;
 		i++;
     }
-    return (string);
+    return (str1);
 }
 
 char    *ft_spec_trans_xx(unsigned long int a, int os)
@@ -170,7 +177,7 @@ char    *ft_spec_trans_xx(unsigned long int a, int os)
     x = 0;
     str = (int *)malloc(sizeof(int) * 10);
 	i = a;
-    while (a > os)
+    while (a >= os)
     {
         i = a / os;
         str[x] = a - i * os;

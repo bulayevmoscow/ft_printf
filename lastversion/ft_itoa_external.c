@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-static int		ft_itoa_external_len(long long int n)
+int		ft_itoa_external_len(long long int n)
 {
 	size_t		i;
 
@@ -45,7 +45,10 @@ char			*ft_itoa_external(long long int n)
 	return (s);
 }
 
-static	int		ft_itoa_external_unsgn_len(unsigned long long int n)
+
+
+
+int		ft_itoa_external_unsgn_len(unsigned long long int n)
 {
 	size_t					i;
 

@@ -5,15 +5,20 @@ int main()
 {
 	int a1, a2;
 //	char string[] = "\n[1]test string %d!";
-	char string[] = "(\"hello, world!\")";
+//	char string[] = "%#10.122f";
 
 	double test4;
 	test4 = -12.23;
 //	00034
 
-	a1 = ft_printf("%#-15.5x || %X  || %o || %100.5p", -5, -5 , -5, &a1);
+
+//
+	a1 = ft_printf("%lx", 2000000000000000000);
+//	a1 = ft_printf("%03.2d", 0);
 	printf("\n");
-	a2 = printf("%#-15.5x || %X  || %o || %100.5p", -5, -5 , -5, &a1);
+	printf(ANSI_COLOR_GREEN);
+	a2 = printf("%lx", 2000000000000000000);;
+//	a2 = printf("%");
 
 
 
@@ -27,7 +32,7 @@ int main()
 		printf("\nНеудача a1 = %+d, a2 = %+d", a1, a2);
 	}
 	printf(ANSI_COLOR_RESET);
-
+	printf("\n%s\n", ft_str_concat("Hello", 0, "World" , 0));
 	return 0;
 
 

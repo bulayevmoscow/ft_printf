@@ -20,7 +20,9 @@ int		parse_main(const char *str, va_list arg_list)
 	parse_sec(str, arg_list);
 	debug_struct();
 	ft_printf = print_result();
-	remove_struct();
+
+//	remove_struct();
+	exit(1);
 	return (ft_printf);
 }
 
@@ -82,10 +84,12 @@ int		parse_pros(char *str, va_list arg_list)
 t_model	*push_mopdel(const char *str, t_model *g_model, int isnew)
 {
 	t_model		*model1;
-
+	printf("\nkekw %s", str);
 	model1 = (t_model *)malloc(sizeof(t_model));
 	model1->value = isnew;
-	model1->str = (char *)str;
+	model1->str = ft_strdup(str);
+	if (isnew != 1)
+		free(str);
 	model1->next = NULL;
 	if (isnew == 1)
 		return (model1);
