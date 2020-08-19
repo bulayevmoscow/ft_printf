@@ -43,6 +43,8 @@ int		pusher_x(t_info *info, va_list arg_list)
 	char					*str;
 	unsigned long long int	nbr;
 
+	str = NULL;
+
 	stars_manager(info, arg_list);
 	if (info->length == 0)
 		nbr = va_arg(arg_list, unsigned int);
@@ -55,10 +57,11 @@ int		pusher_x(t_info *info, va_list arg_list)
 	if (info->length == PF_LL)
 		nbr = va_arg(arg_list, unsigned long long int);
 	info->flag_space = 0;
-	info->flag_plus = 0;;
+	info->flag_plus = 0;
 	str = ft_spec_trans_x(nbr, 16);
 	if (info->flag_oct)
 		str = ft_str_concat(ft_strdup("0x"), 1, str, 1);
+
 	pusher_d_i_2(info, str);
 	return (0);
 }
@@ -152,12 +155,10 @@ char    *ft_spec_trans_x(unsigned long int a, int os)
     {
         if (str[x] > 9)
 		{
-			printf("letter %d\n", str[x]);
 			str1[i] = str[x] + 87;
 		}
         else
 		{
-        	printf("number %d\n", str[x]);
 			str1[i] = str[x] + '0';
 		}
         --x;
