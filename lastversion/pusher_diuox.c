@@ -26,6 +26,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 	int		i;
 
 	i = -1;
+
 	if (ft_atoi(str) >= 0 && info->flag_space && !info->flag_plus)
 		str = ft_str_concat(" ", 0, str, 1);
 	else if (ft_atoi(str) >= 0 && info->flag_plus)
@@ -57,6 +58,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 void		pusher_d_i_2_precision(t_info *info, char **str)
 {
 	int		i;
+
 
 	i = 0;
 	if (info->width > ft_strlen(*str))

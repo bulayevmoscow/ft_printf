@@ -13,10 +13,11 @@ int main()
 
 
 //
-	a1 = ft_printf("%lld", 9223372036854775808);
+	a1 = ft_printf("%lx", 2000000000000000000);
+//	a1 = ft_printf("%03.2d", 0);
 	printf("\n");
 	printf(ANSI_COLOR_GREEN);
-	a2 = printf("%lld", 9223372036854775808);
+	a2 = printf("%lx", 2000000000000000000);;
 //	a2 = printf("%");
 
 
