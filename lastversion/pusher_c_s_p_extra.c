@@ -16,11 +16,12 @@ int		pusher_c(t_info *info, va_list arg_list)
 {
 	char	*str;
 
-	str = ft_strnew(2);
+	str = ft_strnew(1);
 	if (str == NULL)
 		return (-1);
-	*str = va_arg(arg_list, int);
-	push_mopdel(str, g_model, 125);
+	str[0] = (char )va_arg(arg_list, int);
+	pusher_d_i_2(info, str);
+//	push_mopdel(str, g_model, 125);
 }
 
 int		pusher_percent(t_info *info, va_list arg_list)
