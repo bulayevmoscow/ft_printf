@@ -42,6 +42,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 			str[0] = str[i];
 			str[i] = '0';
 		}
+	// printf("%c", info->specifier);
 	if (ft_atoi(str) == 0 && info->precision_mod == 1 )
 	{
 		free(str);
