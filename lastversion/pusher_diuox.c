@@ -82,6 +82,14 @@ void		pusher_d_i_2_precision(t_info *info, char **str)
 		}
 		i++;
 	}
+	i = -1;
+	if ((info->specifier == 'x' || info->specifier == 'X') && info->flag_zero)
+		while ((*str)[++i])
+			if (((*str)[i] == 'x' || (*str)[i] == 'X') && i > 1)
+			{
+				(*str)[1] = (*str)[i];
+				(*str)[i] = '0';
+			}
 
 }
 

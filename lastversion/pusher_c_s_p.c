@@ -136,7 +136,7 @@ char    *ft_spec_trans_x(unsigned long int a, int os)
 	char	*str1;
 
     x = 0;
-    str = (int *)malloc(sizeof(int) * 10);
+    str = (int *)malloc(sizeof(int) * 32);
 	i = a;
     while (a >= os)
     {
@@ -175,7 +175,7 @@ char    *ft_spec_trans_xx(unsigned long int a, int os)
 	int		f;
 	
     x = 0;
-    str = (int *)malloc(sizeof(int) * 10);
+    str = (int *)malloc(sizeof(int) * 32);
 	i = a;
     while (a >= os)
     {
