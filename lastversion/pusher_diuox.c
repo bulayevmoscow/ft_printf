@@ -42,11 +42,16 @@ int		pusher_d_i_2(t_info *info, char *str)
 			str[0] = str[i];
 			str[i] = '0';
 		}
-	// printf("%c", info->specifier);
-	if (ft_atoi(str) == 0 && info->precision_mod == 1 )
+		while (1 == 1)
 	{
-		free(str);
-		str = ft_strdup("");
+		if (ft_atoi(str) == 0 && info->precision_mod == 1 )
+		{
+			if (info->specifier == 'o' && info->flag_oct == 1)
+				break ;
+			free(str);
+			str = ft_strdup("");
+		}
+		break ;
 	}
 	info->flag_zero = (info->flag_minus || info->precision > 1) ? 0 : info->flag_zero;
 	pusher_d_i_2_precision(info, &str);
