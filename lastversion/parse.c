@@ -14,11 +14,10 @@
 
 int		parse_main(const char *str, va_list arg_list)
 {
-	int			ft_printf;
+	int		ft_printf;
 
 	g_model = push_mopdel(str, NULL, 1, 0);
 	parse_sec(str, arg_list);
-	debug_struct();
 	ft_printf = print_result();
 	remove_struct();
 	return (ft_printf);
@@ -39,7 +38,7 @@ int		print_result(void)
 		while (model1->len-- > 0 || model1->str[i])
 		{
 			if (model1->str[i] == 1)
-				write(1, NULL, 1);
+				ft_putchar('\x01');
 			else
 				ft_putchar(model1->str[i]);
 			i++;
@@ -99,5 +98,5 @@ t_model	*push_mopdel(const char *str, t_model *g_model, int isnew, int len)
 	while (g_model->next != NULL)
 		g_model = (t_model *)g_model->next;
 	g_model->next = (t_model *)model1;
-	return (model1);
+	return (NULL);
 }

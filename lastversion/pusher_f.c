@@ -35,12 +35,12 @@ int		pusher_f_split(long double *in, long double *de, t_info *info,
 	nbr -= *in;
 	nbr = (nbr >= 0) ? nbr : nbr * -1;
 	*de = nbr;
-	info->precision = (info->precision == -1) ? 6 : info->precision;
-	str = ft_strnew(info->precision);
+	info->pre = (info->pre == -1) ? 6 : info->pre;
+	str = ft_strnew(info->pre);
 	if (str == NULL)
 		return (-1);
-	round_float(&nbr, info->precision);
-	while (i != info->precision)
+	round_float(&nbr, info->pre);
+	while (i != info->pre)
 	{
 		nbr *= 10;
 		str[i++] = (char)((nbr) + 48);

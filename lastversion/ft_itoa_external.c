@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa_external.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: artemignatev <artemignatev@student.42.f    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 21:42:34 by kupsyloc          #+#    #+#             */
-/*   Updated: 2020/08/16 02:45:04 by artemignate      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "header.h"
 
 int		ft_itoa_external_len(long long int n)
@@ -22,17 +10,17 @@ int		ft_itoa_external_len(long long int n)
 	return (i);
 }
 
-char			*ft_itoa_external(long long int n)
+char	*ft_itoa_external(long long int n)
 {
 	char			*s;
 	size_t			len;
-	long long int	tmp;
+	unsigned long	tmp;
 
 	len = ft_itoa_external_len(n);
 	tmp = n;
 	if (n < 0)
 	{
-		tmp = -n;
+		tmp = n * -1;
 		len++;
 	}
 	if (!(s = ft_strnew(len)))
@@ -45,12 +33,9 @@ char			*ft_itoa_external(long long int n)
 	return (s);
 }
 
-
-
-
 int		ft_itoa_external_unsgn_len(unsigned long long int n)
 {
-	size_t					i;
+	size_t	i;
 
 	i = 1;
 	while (n /= 10)
