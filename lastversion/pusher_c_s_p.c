@@ -18,7 +18,7 @@ int		pusher_manager(t_info *info, va_list arg_list)
 	if (info->specifier == 'c')
 		pusher_c(info, arg_list);
 	if (info->specifier == '%')
-		pusher_percent(info, arg_list);
+		pusher_percent(info);
 	if (info->specifier == 's')
 		pusher_string(info, arg_list);
 	if (info->specifier == 'd' || info->specifier == 'i')
@@ -139,7 +139,7 @@ char    *ft_spec_trans_x(unsigned long int a, int os)
     x = 0;
     str = (int *)malloc(sizeof(int) * 32);
 	i = a;
-    while (a >= os)
+    while (a >= (unsigned int)os)
     {
         i = a / os;
         str[x] = a - i * os;
@@ -150,7 +150,7 @@ char    *ft_spec_trans_x(unsigned long int a, int os)
 	i = 0;
 	str1 = ft_strnew(x + 1);
 	f = x;
-    while (i <= f)
+    while (i <= (unsigned int)f)
     {
         if (str[x] > 9)
 		{
@@ -178,7 +178,7 @@ char    *ft_spec_trans_xx(unsigned long int a, int os)
     x = 0;
     str = (int *)malloc(sizeof(int) * 32);
 	i = a;
-    while (a >= os)
+    while (a >= (unsigned int)os)
     {
         i = a / os;
         str[x] = a - i * os;
@@ -189,7 +189,7 @@ char    *ft_spec_trans_xx(unsigned long int a, int os)
 	i = 0;
     string = ft_strnew(x + 1);
 	f = x;
-    while (i <= f)
+    while (i <= (unsigned int)f)
     {
         if (str[x] > 9)
             string[i] = str[x] + 55;
@@ -202,11 +202,10 @@ char    *ft_spec_trans_xx(unsigned long int a, int os)
     return (string);
 }
 
-int		pusher_string(t_info *info, va_list arg_list)
+void 	pusher_string(t_info *info, va_list arg_list)
 {
 	char	*str;
 	char	*import;
-	char	*buffer;
 
 	info->flag_zero = (info->flag_minus) ? 0 : info->flag_zero;
 	stars_manager(info, arg_list);
@@ -217,7 +216,6 @@ int		pusher_string(t_info *info, va_list arg_list)
 		else
 			str = ft_strsub("(null)", 0, info->precision);
 	}
-
 	else if (info->precision_mod == 1)
 		str = ft_strnew(0);
 	else if (info->precision_mod == 0 && info->precision != -1)
@@ -236,7 +234,7 @@ char	*pusher_string_width(t_info *info, char *str)
 	int		i;
 
 	i = -1;
-	if (ft_strlen(str) > info->width)
+	if ((int)ft_strlen(str) > info->width)
 		return (str);
 	len = info->width;
 	str1 = ft_strmaker((info->flag_zero), len);

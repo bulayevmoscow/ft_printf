@@ -99,5 +99,5 @@ t_model	*push_mopdel(const char *str, t_model *g_model, int isnew, int len)
 	while (g_model->next != NULL)
 		g_model = (t_model *)g_model->next;
 	g_model->next = (t_model *)model1;
-	return (model1);
+	return (NULL);
 }

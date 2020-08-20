@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-int		pusher_c(t_info *info, va_list arg_list)
+void		pusher_c(t_info *info, va_list arg_list)
 {
 	char	chr;
 	char	*str;
@@ -32,12 +32,9 @@ int		pusher_c(t_info *info, va_list arg_list)
 		str[0] = chr;
 		push_mopdel(str, g_model, 12, 1);
 	}
-
-
-
 }
 
-int		pusher_percent(t_info *info, va_list arg_list)
+int		pusher_percent(t_info *info)
 {
 	char	*str;
 

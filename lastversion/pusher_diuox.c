@@ -33,7 +33,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 		str = ft_str_concat("+", 0, str, 1);
 	if (str[0] == ' ' || str[0] == '+' || str[0] == '-')
 		info->precision++;
-	if (info->precision != -1 && ft_strlen(str) < info->precision)
+	if (info->precision != -1 && (int)ft_strlen(str) < info->precision)
 		str = ft_str_concat(ft_strmaker(1, info->precision - (int)ft_strlen(str))\
 		, 1, str, 1);
 	while (str[++i] && str[0] != '+' && str[0] != '-')
@@ -42,17 +42,16 @@ int		pusher_d_i_2(t_info *info, char *str)
 			str[0] = str[i];
 			str[i] = '0';
 		}
-		while (1 == 1)
-	{
-		if (ft_atoi(str) == 0 && info->precision_mod == 1 )
+		while (ft_atoi(str) == 0 && info->precision_mod == 1 )
 		{
+
 			if (info->specifier == 'o' && info->flag_oct == 1)
 				break ;
 			free(str);
 			str = ft_strdup("");
+			break ;
 		}
-		break ;
-	}
+
 	info->flag_zero = (info->flag_minus || info->precision > 1) ? 0 : info->flag_zero;
 	pusher_d_i_2_precision(info, &str);
 	if (str == NULL)
@@ -67,7 +66,7 @@ void		pusher_d_i_2_precision(t_info *info, char **str)
 
 
 	i = 0;
-	if (info->width > ft_strlen(*str))
+	if (info->width > (int)ft_strlen(*str))
 		*str = (info->flag_minus) ? \
 		ft_str_concat(*str, 1, ft_strmaker(info->flag_zero, \
 		info->width - (int)ft_strlen(*str)), 1) : \
