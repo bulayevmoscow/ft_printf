@@ -8,3 +8,5 @@ lastversion/main.c
 lastversion/a.out
 lastversion/.DS_Store
 lastversion/main.c
+.idea
+main.c

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../includes/header.h"
 
 char	*ft_spec_trans_x(unsigned long int a, int os)
 {

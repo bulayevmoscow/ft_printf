@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../includes/header.h"
 
 char	*ft_str_concat(char *str1, int d1, char *str2, int d2)
 {
