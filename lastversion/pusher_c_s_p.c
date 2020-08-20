@@ -70,6 +70,7 @@ int		pusher_p(t_info *info, va_list arg_list)
 	char					*str;
 	unsigned long long int	nbr;
 
+	stars_manager(info, arg_list);
 	nbr = (unsigned long int)va_arg(arg_list, void *);
 	str = ft_spec_trans_x(nbr, 16);
 	str = ft_str_concat(ft_strdup("0x"), 1, str, 1);
