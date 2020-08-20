@@ -27,7 +27,7 @@ void	stars_manager(t_info *info, va_list arg_list)
 	if (info->precision_mod == 2)
 	{
 		info->precision = va_arg(arg_list, int);
-		if (info->precision <= 0)
+		if (info->precision < 0)
 		{
 			info->precision = -1;
 		}
