@@ -34,7 +34,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 	if (str[0] == ' ' || str[0] == '+' || str[0] == '-')
 		info->precision++;
 	if (info->precision != -1 && ft_strlen(str) < info->precision)
-		str = ft_str_concat(ft_strmaker(1, info->precision - ft_strlen(str))\
+		str = ft_str_concat(ft_strmaker(1, info->precision - (int)ft_strlen(str))\
 		, 1, str, 1);
 	while (str[++i] && str[0] != '+' && str[0] != '-')
 		if ((str[i] == '+' || str[i] == '-' || str[i] == ' ') && i != 0)
@@ -57,7 +57,7 @@ int		pusher_d_i_2(t_info *info, char *str)
 	pusher_d_i_2_precision(info, &str);
 	if (str == NULL)
 		return (-1);
-	push_mopdel(str, g_model, 10, 0);
+ 	push_mopdel(str, g_model, 10, 0);
 	return 0;
 }
 

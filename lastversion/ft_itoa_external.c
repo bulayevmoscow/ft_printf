@@ -26,13 +26,13 @@ char			*ft_itoa_external(long long int n)
 {
 	char			*s;
 	size_t			len;
-	long long int	tmp;
+	unsigned long	tmp;
 
 	len = ft_itoa_external_len(n);
 	tmp = n;
 	if (n < 0)
 	{
-		tmp = -n;
+		tmp = n * -1;
 		len++;
 	}
 	if (!(s = ft_strnew(len)))

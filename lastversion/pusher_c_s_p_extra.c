@@ -41,6 +41,7 @@ int		pusher_percent(t_info *info, va_list arg_list)
 {
 	char	*str;
 
+	info->flag_zero = (info->flag_minus) ? 0 : info->flag_zero;
 	str = ft_strnew(2);
 	if (str == NULL)
 		return (-1);

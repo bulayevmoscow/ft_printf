@@ -39,7 +39,7 @@ int		print_result(void)
 		while (model1->len-- > 0 || model1->str[i])
 		{
 			if (model1->str[i] == 1)
-				write(1, NULL, 1);
+				ft_putchar('\x01');
 			else
 				ft_putchar(model1->str[i]);
 			i++;
