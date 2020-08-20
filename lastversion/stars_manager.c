@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:27:41 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/20 14:47:12 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/20 15:49:34 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	stars_manager(t_info *info, va_list arg_list)
 {
-	// int a;
-	// a = va_arg(arg_list, int);
 	if (info->width_mod == 2)
 	{
 		info->width = va_arg(arg_list, int);
