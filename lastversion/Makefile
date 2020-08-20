@@ -6,7 +6,7 @@
 #    By: aghar <aghar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 22:31:46 by kupsyloc          #+#    #+#              #
-#    Updated: 2020/08/17 23:12:39 by aghar            ###   ########.fr        #
+#    Updated: 2020/08/20 22:17:00 by aghar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SOURSE =  check_flags.c ft_itoa_external.c parse.c \
 			ft_strjoin.c ft_strlen.c ft_strnew.c \
 			ft_strsub.c ft_memcpy.c ft_putchar_fd.c \
 			check_flags_extra.c pusher_c_s_p_extra.c \
-			parse_extra.c ft_str_concat.c
+			parse_extra.c ft_str_concat.c norm.c
 				
 				
 
