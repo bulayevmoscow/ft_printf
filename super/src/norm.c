@@ -72,7 +72,7 @@ char	*ft_back_string(int *str, int x, int a)
 		h = 55;
 	else
 		h = 87;
-	while (i <= (unsigned int)f)
+	while (i <= f)
 	{
 		if (str[x] > 9)
 			string[i] = str[x] + h;

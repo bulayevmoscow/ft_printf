@@ -30,7 +30,7 @@ all: obj $(FT_LIB) $(NAME)
 obj:
 	@mkdir -p $(DIR_O)
 $(DIR_O)%.o:$(DIR_S)%.c
-	@$(CC)  $(FT_INK) -I $(HEADER) -o $@ -c $< 
+	@$(CC) $(FLAGS)  $(FT_INK) -I $(HEADER) -o $@ -c $<
 $(FT_LIB):
 	@make -C $(LIBFT)
 	@cp libft/libft.a ./$(NAME)

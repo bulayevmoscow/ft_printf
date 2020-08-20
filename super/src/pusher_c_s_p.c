@@ -95,7 +95,7 @@ int		pusher_xx(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;
 	str = ft_spec_trans_xx(nbr, 16);
-	if (info->flag_oct)
+	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0X"), 1, str, 1);
 	pusher_d_i_2(info, str);
 	return (0);

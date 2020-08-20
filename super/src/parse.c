@@ -61,7 +61,8 @@ int		parse_sec(const char *str, va_list arg_list)
 	{
 		if (str[len[1] + len[0]] == '%')
 		{
-			push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 02, 0);
+			if (len[1] != 0)
+				push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 02, 0);
 			len[1] += parse_pros((char *)str + (len[0] + len[1]), arg_list);
 			len[0] += len[1];
 			len[1] = 0;
