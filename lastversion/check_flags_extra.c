@@ -42,11 +42,11 @@ int		check_precision(const char *str, t_info *info)
 	}
 	else
 	{
-		info->precision = -1;
+		info->pre = -1;
 		return (0);
 	}
 	if (precision != 0)
-		info->precision = precision;
+		info->pre = precision;
 	else
 		info->precision_mod = 1;
 	return (len);

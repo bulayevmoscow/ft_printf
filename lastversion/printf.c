@@ -31,7 +31,7 @@ t_info	info_init(void)
 	information.flag_minus = 0;
 	information.width = 0;
 	information.width_mod = 0;
-	information.precision = 0;
+	information.pre = 0;
 	information.precision_mod = 0;
 	information.length = 0;
 	information.specifier = 0;

@@ -20,50 +20,62 @@ int		pusher_d_i(t_info *info, va_list arg_list)
 	pusher_d_i_2(info, str);
 	return (0);
 }
-
+void	pusher_d_i_2_1(t_info *info, char **str)
+{
+	if (ft_atoi((*str)) >= 0 && info->flag_space && !info->flag_plus)
+		(*str) = ft_str_concat(" ", 0, (*str), 1);
+	else if (ft_atoi((*str)) >= 0 && info->flag_plus)
+		(*str) = ft_str_concat("+", 0, (*str), 1);
+	if ((*str)[0] == ' ' || (*str)[0] == '+' || (*str)[0] == '-')
+		info->pre++;
+	if (info->pre != -1 && (int)ft_strlen((*str)) < info->pre)
+		(*str) = ft_str_concat(ft_strmaker(1, info->pre -
+		(int)ft_strlen(*str)), 1, (*str), 1);
+}
 int		pusher_d_i_2(t_info *info, char *str)
 {
 	int		i;
 
 	i = -1;
-
-	if (ft_atoi(str) >= 0 && info->flag_space && !info->flag_plus)
-		str = ft_str_concat(" ", 0, str, 1);
-	else if (ft_atoi(str) >= 0 && info->flag_plus)
-		str = ft_str_concat("+", 0, str, 1);
-	if (str[0] == ' ' || str[0] == '+' || str[0] == '-')
-		info->precision++;
-	if (info->precision != -1 && (int)ft_strlen(str) < info->precision)
-		str = ft_str_concat(ft_strmaker(1, info->precision - (int)ft_strlen(str))\
-		, 1, str, 1);
+	pusher_d_i_2_1(info, &str);
 	while (str[++i] && str[0] != '+' && str[0] != '-')
 		if ((str[i] == '+' || str[i] == '-' || str[i] == ' ') && i != 0)
 		{
 			str[0] = str[i];
 			str[i] = '0';
 		}
-		while (ft_atoi(str) == 0 && info->precision_mod == 1 )
-		{
-
-			if (info->specifier == 'o' && info->flag_oct == 1)
-				break ;
-			free(str);
-			str = ft_strdup("");
+	while (ft_atoi(str) == 0 && info->precision_mod == 1)
+	{
+		if (info->specifier == 'o' && info->flag_oct == 1)
 			break ;
-		}
-
-	info->flag_zero = (info->flag_minus || info->precision > 1) ? 0 : info->flag_zero;
+		free(str);
+		str = ft_strdup("");
+		break ;
+	}
+	info->flag_zero = (info->flag_minus || info->pre > 1) ? 0 : info->flag_zero;
 	pusher_d_i_2_precision(info, &str);
 	if (str == NULL)
 		return (-1);
- 	push_mopdel(str, g_model, 10, 0);
-	return 0;
+	push_mopdel(str, g_model, 10, 0);
+	return (0);
+}
+void	pusher_d_i_2_precision_2(t_info *info, char **str)
+{
+	int i;
+
+	i = 0;
+	if ((info->specifier == 'x' || info->specifier == 'X') && info->flag_zero)
+		while ((*str)[++i])
+			if (((*str)[i] == 'x' || (*str)[i] == 'X') && i > 1)
+			{
+				(*str)[1] = (*str)[i];
+				(*str)[i] = '0';
+			}
 }
 
 void		pusher_d_i_2_precision(t_info *info, char **str)
 {
 	int		i;
-
 
 	i = 0;
 	if (info->width > (int)ft_strlen(*str))
@@ -74,22 +86,14 @@ void		pusher_d_i_2_precision(t_info *info, char **str)
 		info->width - (int)ft_strlen(*str)), 1, *str, 1);
 	while ((*str)[i] && str[0][0] != ' ')
 	{
-		if (((*str)[i] == '+' || (*str)[i] == '-' ) && i != 0)
+		if (((*str)[i] == '+' || (*str)[i] == '-') && i != 0)
 		{
 			(*str)[0] = (*str)[i];
 			(*str)[i] = '0';
 		}
 		i++;
 	}
-	i = -1;
-	if ((info->specifier == 'x' || info->specifier == 'X') && info->flag_zero)
-		while ((*str)[++i])
-			if (((*str)[i] == 'x' || (*str)[i] == 'X') && i > 1)
-			{
-				(*str)[1] = (*str)[i];
-				(*str)[i] = '0';
-			}
-
+	pusher_d_i_2_precision_2(info, str);
 }
 
 int		pusher_u(t_info *info, va_list arg_list)

@@ -14,11 +14,10 @@
 
 int		parse_main(const char *str, va_list arg_list)
 {
-	int			ft_printf;
+	int		ft_printf;
 
 	g_model = push_mopdel(str, NULL, 1, 0);
 	parse_sec(str, arg_list);
-	debug_struct();
 	ft_printf = print_result();
 	remove_struct();
 	return (ft_printf);
