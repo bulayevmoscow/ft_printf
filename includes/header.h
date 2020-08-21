@@ -6,24 +6,15 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:52:28 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/21 16:46:53 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 17:23:13 by kupsyloc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
-# include <stdio.h>
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# define ANSI_COLOR_RED     "\x1b[31m"
-# define ANSI_COLOR_GREEN   "\x1b[32m"
-# define ANSI_COLOR_YELLOW  "\x1b[33m"
-# define ANSI_COLOR_BLUE    "\x1b[34m"
-# define ANSI_COLOR_MAGENTA "\x1b[35m"
-# define ANSI_COLOR_CYAN    "\x1b[36m"
-# define ANSI_COLOR_RESET   "\x1b[0m"
 
 # define PF_HH 1
 # define PF_H 2

@@ -12,7 +12,7 @@
 
 NAME = libftprintf.a
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -O2
 LIBFT = ./libft/
 FT_LIB = $(addprefix $(LIBFT),libft.a)
 FT_INK = -I ./libft
