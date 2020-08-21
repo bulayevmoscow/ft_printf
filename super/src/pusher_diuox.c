@@ -65,7 +65,8 @@ int		pusher_d_i_2(t_info *info, char *str)
 		if (info->specifier == 'o' && info->flag_oct == 1)
 			break ;
 		free(str);
-		str = (info->specifier == 'p') ? ft_strdup("0x") : ft_strdup("");
+		str = (info->specifier == 'p' && info->pre != -1) ? ft_strdup("0x") : ft_strdup("");
+//		ft_strdup("");
 
 		break ;
 	}

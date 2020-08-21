@@ -74,7 +74,7 @@ int		pusher_f_join(double long nbr1, char *nbr2, t_info *info)
 	pos = (nbr1 >= 0) ? 1 : -1;
 	if (NULL == (nbr = ft_itoa_external_unsgn((unsigned long long)nbr1 * pos)))
 		return (-1);
-	if (-1 == pusher_f_join_2(pos, nbr))
+	if (-1 == pusher_f_join_2(pos, &nbr))
 		return (-1);
 	if ((ft_strlen(nbr2) == 0 && info->flag_oct) || ft_strlen(nbr2) > 0)
 	{
@@ -88,16 +88,12 @@ int		pusher_f_join(double long nbr1, char *nbr2, t_info *info)
 	return (pusher_d_i_2(info, nbr));
 }
 
-int		pusher_f_join_2(char pos, char *nbr)
+int		pusher_f_join_2(char pos, char **nbr)
 {
-	char	*buff;
-
 	if (pos == -1)
 	{
-		buff = nbr;
-		if (NULL == (nbr = ft_strjoin("-", nbr)))
+		if (NULL == ((*nbr) = ft_str_concat("-", 0, *nbr, 0)))
 			return (-1);
-		free(buff);
 	}
 	return (0);
 }

@@ -36,6 +36,16 @@ int		pusher_manager(t_info *info, va_list arg_list)
 		pusher_p(info, arg_list);
 	return (0);
 }
+void	pusher_x_XX_2(t_info *info, char **str)
+{
+	int	len;
+
+	len = ft_strlen(*str);
+	if (info->pre > len)
+		*str = ft_str_concat(ft_strmaker(1, info->pre - len),
+							1, *str, 1);
+
+}
 
 int		pusher_x(t_info *info, va_list arg_list)
 {
@@ -57,6 +67,7 @@ int		pusher_x(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;
 	str = ft_spec_trans_x(nbr, 16);
+	pusher_x_XX_2(info, &str);
 	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0x"), 1, str, 1);
 	pusher_d_i_2(info, str);
@@ -67,10 +78,15 @@ int		pusher_p(t_info *info, va_list arg_list)
 {
 	char					*str;
 	unsigned long long int	nbr;
+	int						len;
 
 	stars_manager(info, arg_list);
 	nbr = (unsigned long int)va_arg(arg_list, void *);
 	str = ft_spec_trans_x(nbr, 16);
+	len = ft_strlen(str);
+	if (len < info->pre)
+		str = ft_str_concat(ft_strmaker(1, info->pre - len),
+		1, str, 1);
 	str = ft_str_concat(ft_strdup("0x"), 1, str, 1);
 	pusher_d_i_2(info, str);
 	return (0);
@@ -95,6 +111,7 @@ int		pusher_xx(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;
 	str = ft_spec_trans_xx(nbr, 16);
+	pusher_x_XX_2(info, &str);
 	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0X"), 1, str, 1);
 	pusher_d_i_2(info, str);

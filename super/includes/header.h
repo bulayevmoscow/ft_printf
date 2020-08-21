@@ -102,7 +102,7 @@ int					pusher_f_split(long double *in, long double *de,
 t_info *info, va_list arg_list);
 void				round_float(long double *nbr, int precision);
 int					pusher_f_join(double long nbr1, char *nbr2, t_info *info);
-int					pusher_f_join_2(char pos, char *nbr);
+int					pusher_f_join_2(char pos, char **nbr);
 char				*ft_strmaker(int space, int size);
 int					ft_itoa_external_len(long long int n);
 char				*ft_itoa_external(long long int n);
