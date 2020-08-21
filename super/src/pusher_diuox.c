@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:56:10 by aghar             #+#    #+#             */
-/*   Updated: 2020/08/20 22:03:58 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:44:16 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void	pusher_d_i_2_1(t_info *info, char **str)
 		(*str) = ft_str_concat(ft_strmaker(1, info->pre -
 		(int)ft_strlen(*str)), 1, (*str), 1);
 	while ((*str)[++i] && (*str)[0] != '+' && (*str)[0] != '-')
-		if (((*str)[i] == '+' || (*str)[i] == '-' || (*str)[i] == ' ') && i != 0)
+		if (((*str)[i] == '+' || (*str)[i] == '-' || (*str)[i] == ' ')
+		&& i != 0)
 		{
 			(*str)[0] = (*str)[i];
 			(*str)[i] = '0';
@@ -57,17 +58,14 @@ void	pusher_d_i_2_1(t_info *info, char **str)
 
 int		pusher_d_i_2(t_info *info, char *str)
 {
-
 	pusher_d_i_2_1(info, &str);
-
 	while (ft_atoi(str) == 0 && info->precision_mod == 1)
 	{
 		if (info->specifier == 'o' && info->flag_oct == 1)
 			break ;
 		free(str);
-		str = (info->specifier == 'p' && info->pre != -1) ? ft_strdup("0x") : ft_strdup("");
-//		ft_strdup("");
-
+		str = (info->specifier == 'p' && info->pre != -1) ?
+		ft_strdup("0x") : ft_strdup("");
 		break ;
 	}
 	info->flag_zero = (info->flag_minus || info->pre > 1) ? 0 : info->flag_zero;

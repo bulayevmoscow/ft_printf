@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:41:04 by aghar             #+#    #+#             */
-/*   Updated: 2020/08/20 21:41:05 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:42:51 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		check_manager(char *str, t_info *info)
 	len += check_precision(str + len, info);
 	len += check_length(str + len, info);
 	spec = check_specifier(str + len, info);
-//	info->width_mod = (info->width != 0) ? 0 : 2;
 	if (spec == -1)
 	{
 		if (len != 1 && spec != -1)

@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:11:23 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/20 22:00:59 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:46:36 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,6 @@ int		pusher_manager(t_info *info, va_list arg_list)
 		pusher_p(info, arg_list);
 	return (0);
 }
-void	pusher_x_XX_2(t_info *info, char **str)
-{
-	int	len;
-
-	len = ft_strlen(*str);
-	if (info->pre > len)
-		*str = ft_str_concat(ft_strmaker(1, info->pre - len),
-							1, *str, 1);
-
-}
 
 int		pusher_x(t_info *info, va_list arg_list)
 {
@@ -67,7 +57,7 @@ int		pusher_x(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;
 	str = ft_spec_trans_x(nbr, 16);
-	pusher_x_XX_2(info, &str);
+	pusher_x_xx_2(info, &str);
 	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0x"), 1, str, 1);
 	pusher_d_i_2(info, str);
@@ -111,7 +101,7 @@ int		pusher_xx(t_info *info, va_list arg_list)
 	info->flag_space = 0;
 	info->flag_plus = 0;
 	str = ft_spec_trans_xx(nbr, 16);
-	pusher_x_XX_2(info, &str);
+	pusher_x_xx_2(info, &str);
 	if (info->flag_oct && nbr != 0)
 		str = ft_str_concat(ft_strdup("0X"), 1, str, 1);
 	pusher_d_i_2(info, str);

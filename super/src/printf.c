@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:47:51 by aghar             #+#    #+#             */
-/*   Updated: 2020/08/20 22:20:05 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:46:32 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,13 @@ char	*ft_strmaker(int space, int size)
 	}
 	str[size] = '\0';
 	return (str);
+}
+
+void	pusher_x_xx_2(t_info *info, char **str)
+{
+	int	len;
+
+	len = ft_strlen(*str);
+	if (info->pre > len)
+		*str = ft_str_concat(ft_strmaker(1, info->pre - len), 1, *str, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:41:25 by aghar             #+#    #+#             */
-/*   Updated: 2020/08/20 21:41:26 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:43:17 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int		check_width(char *str, t_info *info)
 		len++;
 		info->width_mod = 2;
 	}
-
 	width = ft_atoi(str + len);
 	info->width = width;
 	if (width == 0)

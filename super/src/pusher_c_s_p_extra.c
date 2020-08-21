@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 21:54:33 by aghar             #+#    #+#             */
-/*   Updated: 2020/08/20 22:03:55 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:43:32 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pusher_c(t_info *info, va_list arg_list)
 	char		chr;
 	char		*str;
 
-	stars_manager(info,arg_list);
+	stars_manager(info, arg_list);
 	chr = (char)va_arg(arg_list, int);
 	if (info->width)
 	{

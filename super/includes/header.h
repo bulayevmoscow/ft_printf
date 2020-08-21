@@ -6,7 +6,7 @@
 /*   By: aghar <aghar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/16 02:52:28 by artemignate       #+#    #+#             */
-/*   Updated: 2020/08/20 22:14:06 by aghar            ###   ########.fr       */
+/*   Updated: 2020/08/21 16:46:53 by aghar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ char				*ft_strnew(size_t size);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 void				*ft_memcpy(void *destptr, const void *srcptr, size_t num);
 void				ft_putchar_fd(char c, int fd);
+void				pusher_x_xx_2(t_info *info, char **str);
 void				stars_manager(t_info *info, va_list arg_list);
 int					pusher_manager(t_info *info, va_list arg_list);
 int					pusher_percent(t_info *info);
