@@ -16,7 +16,10 @@ void	stars_manager(t_info *info, va_list arg_list)
 {
 	if (info->width_mod == 2)
 	{
-		info->width = va_arg(arg_list, int);
+		if (info->width == 0)
+			info->width = va_arg(arg_list, int);
+		else
+			va_arg(arg_list, int);
 		if (info->width <= 0)
 		{
 			info->width *= -1;

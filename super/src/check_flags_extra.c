@@ -58,11 +58,17 @@ int		check_width(char *str, t_info *info)
 	int		len;
 
 	len = 0;
-	if (*str == '*')
+	if (*str == '*' && !ft_isdigit(*(str + 1)))
 	{
 		info->width_mod = 2;
 		return (++len);
 	}
+	if (*str == '*' && ft_isdigit(*(str + 1)))
+	{
+		len++;
+		info->width_mod = 2;
+	}
+
 	width = ft_atoi(str + len);
 	info->width = width;
 	if (width == 0)

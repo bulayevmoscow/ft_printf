@@ -23,6 +23,7 @@ int		check_manager(char *str, t_info *info)
 	len += check_precision(str + len, info);
 	len += check_length(str + len, info);
 	spec = check_specifier(str + len, info);
+//	info->width_mod = (info->width != 0) ? 0 : 2;
 	if (spec == -1)
 	{
 		if (len != 1 && spec != -1)

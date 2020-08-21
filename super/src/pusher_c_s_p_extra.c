@@ -17,6 +17,7 @@ void	pusher_c(t_info *info, va_list arg_list)
 	char		chr;
 	char		*str;
 
+	stars_manager(info,arg_list);
 	chr = (char)va_arg(arg_list, int);
 	if (info->width)
 	{
