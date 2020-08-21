@@ -25,7 +25,8 @@ int		check_manager(char *str, t_info *info)
 	spec = check_specifier(str + len, info);
 	if (spec == -1)
 	{
-		push_mopdel(ft_strsub(str, 0, 1), g_model, 4, 0);
+		if (len != 1 && spec != -1)
+			push_mopdel(ft_strsub(str, 0, 1), g_model, 4, 0);
 		info->specifier = 0;
 		return (len);
 	}

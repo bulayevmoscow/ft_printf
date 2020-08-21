@@ -10,3 +10,6 @@ lastversion/.DS_Store
 lastversion/main.c
 .idea
 main.c
+*.a
+*.o
+a.out

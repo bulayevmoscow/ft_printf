@@ -70,7 +70,7 @@ int		parse_sec(const char *str, va_list arg_list)
 		else
 			len[1]++;
 	}
-	push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 022, 0);
+	push_mopdel(ft_strsub(str, len[0], len[1]), g_model, 22, 0);
 	return (0);
 }
 
